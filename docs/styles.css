@@ -11,7 +11,7 @@ body {
 
 .container {
     background-color: white;
-    padding: 40px;
+    padding: 40px; /* General padding for larger screens */
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     max-width: 600px;
@@ -108,19 +108,19 @@ button {
 /* Media Query for Devices with Screen Widths of 768px and Less (Tablets, Mobile) */
 @media (max-width: 768px) {
     body {
-        justify-content: center; /* Centering content on mobile */
+        justify-content: center;
         padding-top: 20px;
     }
 
     .container {
-        padding: 30px 20px; /* Increase left and right padding for mobile */
-        margin: 0 20px; /* Add more space on the sides */
-        max-width: 100%; /* Ensure the form fits the screen */
-        box-shadow: none; /* Removing shadow on smaller screens for a cleaner look */
+        padding: 30px 30px; /* Added more padding on the left and right for mobile */
+        margin: 0 20px;
+        max-width: 100%;
+        box-shadow: none;
     }
 
     h1 {
-        font-size: 24px; /* Slightly smaller heading for mobile */
+        font-size: 24px;
     }
 
     label {
@@ -129,23 +129,23 @@ button {
 
     input, select, textarea {
         font-size: 14px;
-        padding: 10px; /* Smaller padding for inputs */
+        padding: 10px;
     }
 
     button {
         padding: 12px;
-        font-size: 14px; /* Slightly smaller buttons */
+        font-size: 14px;
     }
 
     .signature {
-        height: 120px; /* Smaller signature box */
+        height: 120px;
     }
 }
 
 /* Media Query for Devices with Screen Widths of 480px and Less (Smaller Mobile Screens) */
 @media (max-width: 480px) {
     .container {
-        padding: 25px 15px; /* Ensure there’s enough space on smaller screens */
+        padding: 25px 20px; /* Ensure padding on both sides */
         margin: 0 10px;
     }
 
