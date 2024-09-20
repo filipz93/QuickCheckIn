@@ -1,33 +1,42 @@
-document.getElementById('checkinForm').addEventListener('submit', function(e) {
+// Signature pad setup
+const canvas = document.getElementById('signatureCanvas');
+const signaturePad = new SignaturePad(canvas);
+
+// Clear signature button event listener
+document.getElementById('clearSignature').addEventListener('click', function () {
+    signaturePad.clear();
+});
+
+// Form submission
+document.getElementById('checkinForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    let formData = new FormData();
-    formData.append("name", document.getElementById('name').value);
-    formData.append("email", document.getElementById('email').value);
-    formData.append("idUpload", document.getElementById('idUpload').files[0]);
+    // Get form data
+    const formData = new FormData(this);
 
-    // Clear any previous messages
-    let messageDiv = document.getElementById('message');
-    messageDiv.innerHTML = '';
+    // Check if the signature is empty
+    if (signaturePad.isEmpty()) {
+        alert('Please provide a signature.');
+        return;
+    }
 
-    fetch('YOUR_API_GATEWAY_URL', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new Error('Something went wrong');
-    })
-    .then(data => {
-        // Show success message
-        messageDiv.innerHTML = 'Check-in successful!';
-        messageDiv.classList.add('success');
-    })
-    .catch(error => {
-        // Show error message
-        messageDiv.innerHTML = 'Error: ' + error.message;
-        messageDiv.classList.add('error');
-    });
+    // Get the signature as data URL (image)
+    const signatureData = signaturePad.toDataURL();
+
+    // Append the signature data to the form data
+    formData.append('signature', signatureData);
+
+    // Simulate form submission (this is where you send data to the server)
+    alert('Form submitted successfully!');
+    console.log('Form data:', formData);
+
+    // Example: Send formData to server using fetch or XMLHttpRequest
+    // fetch('your-server-endpoint', {
+    //     method: 'POST',
+    //     body: formData
+    // }).then(response => {
+    //     console.log('Server response:', response);
+    // }).catch(error => {
+    //     console.error('Error:', error);
+    // });
 });
