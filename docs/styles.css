@@ -108,17 +108,19 @@ button {
 /* Media Query for Devices with Screen Widths of 768px and Less (Tablets, Mobile) */
 @media (max-width: 768px) {
     body {
-        justify-content: flex-start;
+        justify-content: center; /* Centering content on mobile */
         padding-top: 20px;
     }
 
     .container {
         padding: 20px;
         margin: 0 10px;
+        max-width: 100%; /* Ensure the form fits the screen */
+        box-shadow: none; /* Removing shadow on smaller screens for a cleaner look */
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 24px; /* Slightly smaller heading for mobile */
     }
 
     label {
@@ -127,16 +129,16 @@ button {
 
     input, select, textarea {
         font-size: 14px;
-        padding: 10px;
+        padding: 10px; /* Smaller padding for inputs */
     }
 
     button {
         padding: 12px;
-        font-size: 14px;
+        font-size: 14px; /* Slightly smaller buttons */
     }
 
     .signature {
-        height: 120px;
+        height: 120px; /* Smaller signature box */
     }
 }
 
