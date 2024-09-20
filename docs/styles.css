@@ -1,43 +1,32 @@
-html, body {
+/* Reset basic styling */
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eef2f7;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #eef2f7;
-    box-sizing: border-box;
-    overflow-x: hidden; /* Ensure no horizontal scroll */
 }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
+/* Main container styling */
 .container {
-    background-color: white;
+    background-color: #ffffff;
     padding: 20px;
+    margin: 0 auto;
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 600px; /* Limits width to 600px for large screens */
-    box-sizing: border-box;
-    margin: 20px auto;
+    max-width: 600px;
 }
 
-/* Mobile-first: General styles apply to smaller screens */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-        margin: 0 10px; /* Padding around the form */
-        max-width: 100%; /* Full width on mobile */
-    }
-}
-
+/* Form Title */
 h1 {
     text-align: center;
     color: #2c3e50;
@@ -45,76 +34,94 @@ h1 {
     margin-bottom: 20px;
 }
 
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-    color: #34495e;
-    font-size: 16px;
+/* Form layout */
+form {
+    display: grid;
+    grid-template-columns: 1fr; /* All inputs in one column */
+    grid-gap: 15px;
 }
 
+/* Label styling */
+label {
+    font-size: 14px;
+}
+
+/* Input, select, textarea styling */
 input, select, textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    border: 1px solid #bdc3c7;
-    font-size: 16px;
-    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
+/* Signature styling */
 .signature {
-    border: 2px dashed #bdc3c7;
-    border-radius: 6px;
-    height: 150px;
+    height: 100px;
+    border: 2px dashed #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    font-style: italic;
+    color: #888;
 }
 
+/* Button styling */
 button {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     background-color: #3498db;
     color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
     button:hover {
         background-color: #2980b9;
     }
 
-/* Small device adjustments */
+/* Mobile view adjustments */
 @media (max-width: 480px) {
     .container {
         padding: 10px;
-        margin: 0 auto;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    label {
-        font-size: 13px;
+        max-width: 100%;
     }
 
     input, select, textarea {
-        font-size: 13px;
         padding: 8px;
     }
 
     button {
         padding: 10px;
-        font-size: 13px;
+        font-size: 14px;
+    }
+}
+
+/* Tablet and large screen adjustments */
+@media (min-width: 768px) {
+    .container {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 600px;
     }
 
-    .signature {
-        height: 100px;
+    h1 {
+        font-size: 30px;
+    }
+
+    input, select, textarea {
+        padding: 12px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 18px;
     }
 }
