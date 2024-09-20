@@ -1,114 +1,121 @@
+/* Reset some default styles */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
+body {
     font-family: Arial, sans-serif;
-    background-color: #eef2f7;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Ensures items start from the top */
-    padding: 20px; /* Allows space around content */
+    background-color: #f5f5f5;
+    padding: 20px;
 }
 
 .container {
-    background-color: white;
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    margin: 20px auto;
 }
 
 h1 {
     text-align: center;
-    color: #32658c;
-    font-size: 28px;
+    color: #333;
     margin-bottom: 20px;
-    margin-top: 0; /* Fix margin at the top */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    font-size: 14px;
+    margin-bottom: 8px;
     font-weight: bold;
-    margin-top: 10px;
-    display: block;
+    color: #333;
 }
 
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    padding: 12px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 14px;
-}
-
-button {
-    width: 100%;
-    background-color: #32658c;
-    color: white;
-    border: none;
-    padding: 12px;
     font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
+    width: 100%;
+    transition: border-color 0.3s ease;
 }
 
-    button:hover {
-        background-color: #254e6a;
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="date"]:focus,
+    select:focus {
+        border-color: #007bff;
+        outline: none;
     }
 
-.signature {
-    border: 2px dashed #ccc;
-    padding: 10px;
-    border-radius: 4px;
-    height: 150px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-canvas {
-    border: 1px solid #ccc;
-    border-radius: 4px;
+input[type="checkbox"] {
+    margin-right: 10px;
 }
 
 .privacy-policy {
-    font-size: 13px;
+    margin-bottom: 20px;
 }
 
-a {
-    color: #32658c;
-    text-decoration: none;
+.signature {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-    a:hover {
-        text-decoration: underline;
+canvas {
+    display: block;
+    width: 100%;
+}
+
+button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    button:hover {
+        background-color: #0056b3;
     }
 
-/* Ensure form is centered on smaller devices */
+    button[type="button"] {
+        background-color: #f44336;
+        margin-bottom: 20px;
+    }
+
+        button[type="button"]:hover {
+            background-color: #d32f2f;
+        }
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        align-items: flex-start;
-    }
-
     .container {
         padding: 15px;
-        margin-top: 15px;
-        max-width: 100%;
     }
 
-    input, select, textarea, button {
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select {
         font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
     }
 
     h1 {
@@ -117,27 +124,24 @@ a {
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 20px;
-        align-items: flex-start;
-    }
-
     .container {
         padding: 10px;
-        margin-top: 10px;
-        max-width: 100%;
     }
 
-    h1 {
-        font-size: 22px;
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select {
+        font-size: 13px;
+        padding: 10px;
     }
 
     button {
-        font-size: 14px;
-    }
-
-    input, select, textarea {
         font-size: 13px;
         padding: 8px;
+    }
+
+    h1 {
+        font-size: 20px;
     }
 }
