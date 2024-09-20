@@ -1,3 +1,4 @@
+/* Ensuring the body uses Flexbox for centering */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #eef2f7;
@@ -7,17 +8,19 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .container {
     background-color: white;
-    padding: 40px 40px; /* Increased padding and applied important */
+    padding: 40px; /* General padding for larger screens */
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 100%;
-    margin: 20px auto !important; /* Centering the container and applying important */
-    box-sizing: border-box; /* Ensures padding is included in width */
+    margin: 0 auto; /* Centering the container */
+    box-sizing: border-box;
 }
 
 h1 {
@@ -108,17 +111,47 @@ button {
 
 /* Media Query for Devices with Screen Widths of 768px and Less (Tablets, Mobile) */
 @media (max-width: 768px) {
+    body {
+        justify-content: center; /* Flexbox ensures centering */
+        padding-top: 20px;
+    }
+
     .container {
-        padding: 30px 30px !important; /* Stronger padding enforcement */
-        margin: 0 auto !important; /* Ensure centering */
+        padding: 20px 20px !important; /* Added more padding on the left and right for mobile */
+        margin: 0 20px !important; /* Force centering */
+        max-width: 100%;
         box-shadow: none;
+        box-sizing: border-box; /* Ensure proper padding behavior */
     }
 }
 
 /* Media Query for Devices with Screen Widths of 480px and Less (Smaller Mobile Screens) */
 @media (max-width: 480px) {
     .container {
-        padding: 25px 20px !important; /* Adjust padding for very small screens */
-        margin: 0 auto !important; /* Centering fix */
+        padding: 20px 15px !important; /* Ensure padding on both sides */
+        margin: 0 auto !important; /* Force center */
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input, select, textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .signature {
+        height: 100px;
     }
 }
