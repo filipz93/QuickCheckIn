@@ -23,24 +23,26 @@ body {
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 600px; /* Apply max-width */
+    max-width: 600px; /* Ensures container doesn't exceed 600px on large screens */
     box-sizing: border-box;
     margin: 20px auto;
 }
 
-/* Force max-width on large screens */
-@media (min-width: 769px) {
-    .container {
-        max-width: 600px; /* Limit to 600px on large screens */
-    }
-}
-
-/* Media Query for Devices with Screen Widths of 768px and Less */
+/* Mobile-first: General styles apply to smaller screens */
+/* Ensure the container takes the full width for small devices */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
-        margin: 0 10px;
-        max-width: 100%; /* Ensure no overflow on small screens */
+        margin: 0 10px; /* Padding around the form */
+        max-width: 100%; /* Full width on mobile */
+    }
+}
+
+/* Force a maximum width for large screens */
+@media (min-width: 769px) {
+    .container {
+        max-width: 600px; /* Set max width to 600px for larger screens */
+        padding: 20px;
     }
 }
 
@@ -95,12 +97,11 @@ button {
         background-color: #2980b9;
     }
 
-/* Media Query for Devices with Screen Widths of 480px and Less */
+/* Small device adjustments */
 @media (max-width: 480px) {
     .container {
         padding: 10px;
         margin: 0 auto;
-        max-width: 100%;
     }
 
     h1 {
