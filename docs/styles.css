@@ -1,12 +1,20 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Ensure the body takes full height */
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #eef2f7;
     box-sizing: border-box;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Ensures that the form starts near the top */
+    min-height: 100vh; /* Ensures full viewport height */
 }
 
 .container {
@@ -17,8 +25,7 @@ html, body {
     max-width: 600px;
     width: 100%;
     box-sizing: border-box;
-    margin: 0 auto; /* Center horizontally */
-    min-height: 100vh; /* Ensure the form takes the full screen height */
+    margin: 20px auto; /* Center horizontally */
 }
 
 h1 {
