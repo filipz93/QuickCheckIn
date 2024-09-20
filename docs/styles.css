@@ -8,15 +8,13 @@ html, body {
     align-items: center;
     background-color: #eef2f7;
     box-sizing: border-box;
-    overflow-x: hidden; /* Hide horizontal overflow */
 }
 
 body {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    min-height: 100vh;
-    width: 100%;
 }
 
 .container {
@@ -24,10 +22,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Full width for small screens */
-    max-width: 600px; /* Restrict width to 600px on larger screens */
+    max-width: 600px; /* Maximum width of the form */
+    width: 100%; /* Ensures form takes full width on smaller screens */
     box-sizing: border-box;
-    margin: 20px auto; /* Center horizontally with margin */
+    margin: 20px auto; /* Centers the container horizontally */
 }
 
 h1 {
@@ -53,7 +51,6 @@ input, select, textarea {
     border: 1px solid #bdc3c7;
     font-size: 16px;
     box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .signature {
@@ -87,7 +84,7 @@ button {
     .container {
         padding: 15px;
         margin: 0 10px;
-        max-width: 100%; /* Ensure no overflow on small screens */
+        max-width: 100%; /* Ensure form doesn't overflow on small screens */
     }
 }
 
@@ -96,7 +93,7 @@ button {
     .container {
         padding: 10px;
         margin: 0 auto;
-        max-width: 100%; /* Adjusts for smaller devices */
+        max-width: 100%;
     }
 
     h1 {
