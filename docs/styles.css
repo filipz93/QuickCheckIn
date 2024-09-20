@@ -113,8 +113,8 @@ button {
     }
 
     .container {
-        padding: 20px;
-        margin: 0 10px;
+        padding: 30px 20px; /* Increase left and right padding for mobile */
+        margin: 0 20px; /* Add more space on the sides */
         max-width: 100%; /* Ensure the form fits the screen */
         box-shadow: none; /* Removing shadow on smaller screens for a cleaner look */
     }
@@ -145,8 +145,8 @@ button {
 /* Media Query for Devices with Screen Widths of 480px and Less (Smaller Mobile Screens) */
 @media (max-width: 480px) {
     .container {
-        padding: 15px;
-        margin: 0 5px;
+        padding: 25px 15px; /* Ensure there’s enough space on smaller screens */
+        margin: 0 10px;
     }
 
     h1 {
