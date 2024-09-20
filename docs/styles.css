@@ -2,12 +2,13 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #eef2f7;
     box-sizing: border-box;
-    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 body {
@@ -88,10 +89,9 @@ button {
     }
 
     .container {
-        padding: 20px 20px !important; /* Reduced padding for mobile */
-        margin: 0 20px !important;
+        padding: 20px 15px !important; /* Reduced padding for mobile */
+        margin: 0 10px !important; /* Ensure minimal margin on mobile */
         max-width: 100%;
-        min-height: 100vh; /* Ensure the form takes the full screen height */
         box-sizing: border-box;
     }
 }
@@ -99,10 +99,9 @@ button {
 /* Media Query for Devices with Screen Widths of 480px and Less (Smaller Mobile Screens) */
 @media (max-width: 480px) {
     .container {
-        padding: 15px 15px !important;
+        padding: 15px 10px !important;
         margin: 0 auto !important;
         max-width: 100%;
-        min-height: 100vh; /* Ensure the form takes the full screen height */
         box-sizing: border-box;
     }
 
