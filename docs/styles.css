@@ -11,12 +11,13 @@ body {
 
 .container {
     background-color: white;
-    padding: 40px; /* General padding for larger screens */
+    padding: 40px 40px; /* Increased padding and applied important */
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 100%;
-    margin: 20px;
+    margin: 20px auto !important; /* Centering the container and applying important */
+    box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 h1 {
@@ -104,45 +105,20 @@ button {
         .privacy-policy a:hover {
             text-decoration: underline;
         }
+
 /* Media Query for Devices with Screen Widths of 768px and Less (Tablets, Mobile) */
 @media (max-width: 768px) {
-    body {
-        justify-content: center; /* Ensures content is centered */
-        padding-top: 20px;
-    }
-
     .container {
-        padding: 30px 30px !important; /* Increased padding with important flag */
-        margin: 0 auto; /* Ensures margin is evenly distributed */
-        max-width: 100%; /* Limits width to device width */
-        box-shadow: none; /* Optional: removes shadow for a cleaner look */
-    }
-
-    h1, label, input, select, textarea, button {
-        font-size: 14px; /* Adjusts font size for readability on smaller screens */
-    }
-
-    .signature {
-        height: 120px; /* Adjusts the signature box height */
+        padding: 30px 30px !important; /* Stronger padding enforcement */
+        margin: 0 auto !important; /* Ensure centering */
+        box-shadow: none;
     }
 }
 
 /* Media Query for Devices with Screen Widths of 480px and Less (Smaller Mobile Screens) */
 @media (max-width: 480px) {
     .container {
-        padding: 25px 20px !important; /* Slightly less padding on the smallest screens */
-        margin: 0 10px; /* Reduces side margin */
-    }
-
-    h1 {
-        font-size: 20px; /* Smaller font size for very small devices */
-    }
-
-    label, input, select, textarea, button {
-        font-size: 13px; /* Smaller font sizes for compact appearance */
-    }
-
-    .signature {
-        height: 100px; /* Smaller signature box suitable for smaller screens */
+        padding: 25px 20px !important; /* Adjust padding for very small screens */
+        margin: 0 auto !important; /* Centering fix */
     }
 }
