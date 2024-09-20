@@ -8,6 +8,7 @@ html, body {
     align-items: center;
     background-color: #eef2f7;
     box-sizing: border-box;
+    overflow-x: hidden; /* Ensure no horizontal scroll */
 }
 
 body {
@@ -23,26 +24,17 @@ body {
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 600px; /* Ensures container doesn't exceed 600px on large screens */
+    max-width: 600px; /* Limits width to 600px for large screens */
     box-sizing: border-box;
     margin: 20px auto;
 }
 
 /* Mobile-first: General styles apply to smaller screens */
-/* Ensure the container takes the full width for small devices */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
         margin: 0 10px; /* Padding around the form */
         max-width: 100%; /* Full width on mobile */
-    }
-}
-
-/* Force a maximum width for large screens */
-@media (min-width: 769px) {
-    .container {
-        max-width: 600px; /* Set max width to 600px for larger screens */
-        padding: 20px;
     }
 }
 
