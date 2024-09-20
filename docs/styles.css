@@ -8,23 +8,23 @@ html, body {
     align-items: center;
     background-color: #eef2f7;
     box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-x: hidden; /* Ensure no horizontal overflow */
 }
 
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Ensures that the form starts near the top */
-    min-height: 100vh; /* Ensures full viewport height */
+    align-items: flex-start; /* Align to the top */
+    min-height: 100vh;
 }
 
 .container {
     background-color: white;
-    padding: 20px 30px; /* General padding */
+    padding: 20px; /* Reduced padding */
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
+    max-width: 100%; /* Ensure no overflow */
+    width: 100%; /* Use full width */
     box-sizing: border-box;
     margin: 20px auto; /* Center horizontally */
 }
@@ -81,28 +81,21 @@ button {
         background-color: #2980b9;
     }
 
-/* Media Query for Devices with Screen Widths of 768px and Less (Tablets, Mobile) */
+/* Media Query for Devices with Screen Widths of 768px and Less */
 @media (max-width: 768px) {
-    body {
-        justify-content: flex-start; /* Align content closer to the top */
-        padding-top: 0; /* Remove any unnecessary top padding */
-    }
-
     .container {
-        padding: 20px 15px !important; /* Reduced padding for mobile */
-        margin: 0 10px !important; /* Ensure minimal margin on mobile */
-        max-width: 100%;
-        box-sizing: border-box;
+        padding: 15px;
+        margin: 0 10px; /* Enforce margin within screen */
+        max-width: 100%; /* Ensure no overflow */
     }
 }
 
-/* Media Query for Devices with Screen Widths of 480px and Less (Smaller Mobile Screens) */
+/* Media Query for Devices with Screen Widths of 480px and Less */
 @media (max-width: 480px) {
     .container {
-        padding: 15px 10px !important;
-        margin: 0 auto !important;
+        padding: 10px;
+        margin: 0 auto;
         max-width: 100%;
-        box-sizing: border-box;
     }
 
     h1 {
