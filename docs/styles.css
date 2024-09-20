@@ -14,8 +14,9 @@ html, body {
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Ensures that the form starts near the top */
+    align-items: flex-start;
     min-height: 100vh;
+    width: 100%;
 }
 
 .container {
@@ -23,10 +24,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Set max-width for larger screens */
-    width: 100%;
+    width: 100%; /* Full width for small screens */
+    max-width: 600px; /* Restrict width to 600px on larger screens */
     box-sizing: border-box;
-    margin: 20px; /* Small margin to prevent touching edges */
+    margin: 20px auto; /* Center horizontally with margin */
 }
 
 h1 {
@@ -86,7 +87,7 @@ button {
     .container {
         padding: 15px;
         margin: 0 10px;
-        max-width: 100%; /* Ensure no overflow on mobile */
+        max-width: 100%; /* Ensure no overflow on small screens */
     }
 }
 
@@ -95,7 +96,7 @@ button {
     .container {
         padding: 10px;
         margin: 0 auto;
-        max-width: 100%;
+        max-width: 100%; /* Adjusts for smaller devices */
     }
 
     h1 {
