@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    background-color: #eef2f7;
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,32 +11,42 @@ body {
 
 .container {
     background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 100%;
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: bold;
+    color: #34495e;
 }
 
 input, select, textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #bdc3c7;
     font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
+
+    input:focus, select:focus, textarea:focus {
+        border-color: #2980b9;
+        outline: none;
+    }
 
     input[type="checkbox"] {
         width: auto;
@@ -44,38 +54,50 @@ input, select, textarea {
     }
 
 .signature {
-    border: 1px solid #ccc;
-    padding: 5px;
-    height: 200px;
+    border: 2px dashed #bdc3c7;
+    border-radius: 6px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 button {
     width: 100%;
-    padding: 12px;
-    background-color: #4CAF50;
+    padding: 14px;
+    background-color: #3498db;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
     button:hover {
-        background-color: #45a049;
+        background-color: #2980b9;
     }
 
     button[type="button"] {
-        background-color: #f44336;
+        background-color: #e74c3c;
         margin-bottom: 10px;
     }
 
         button[type="button"]:hover {
-            background-color: #e53935;
+            background-color: #c0392b;
         }
 
 .privacy-policy {
     font-size: 12px;
+    color: #7f8c8d;
 }
+
+    .privacy-policy a {
+        color: #3498db;
+        text-decoration: none;
+    }
+
+        .privacy-policy a:hover {
+            text-decoration: underline;
+        }
