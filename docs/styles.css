@@ -22,10 +22,26 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Maximum width of the form */
-    width: 100%; /* Ensures form takes full width on smaller screens */
+    width: 100%;
+    max-width: 600px; /* Apply max-width */
     box-sizing: border-box;
-    margin: 20px auto; /* Centers the container horizontally */
+    margin: 20px auto;
+}
+
+/* Force max-width on large screens */
+@media (min-width: 769px) {
+    .container {
+        max-width: 600px; /* Limit to 600px on large screens */
+    }
+}
+
+/* Media Query for Devices with Screen Widths of 768px and Less */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 0 10px;
+        max-width: 100%; /* Ensure no overflow on small screens */
+    }
 }
 
 h1 {
@@ -78,15 +94,6 @@ button {
     button:hover {
         background-color: #2980b9;
     }
-
-/* Media Query for Devices with Screen Widths of 768px and Less */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-        margin: 0 10px;
-        max-width: 100%; /* Ensure form doesn't overflow on small screens */
-    }
-}
 
 /* Media Query for Devices with Screen Widths of 480px and Less */
 @media (max-width: 480px) {
