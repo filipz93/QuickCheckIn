@@ -18,6 +18,7 @@ html, body {
     width: 100%;
     box-sizing: border-box;
     margin: 0 auto; /* Center horizontally */
+    min-height: 100vh; /* Ensure the form takes the full screen height */
 }
 
 h1 {
@@ -83,6 +84,7 @@ button {
         padding: 20px 20px !important; /* Reduced padding for mobile */
         margin: 0 20px !important;
         max-width: 100%;
+        min-height: 100vh; /* Ensure the form takes the full screen height */
         box-sizing: border-box;
     }
 }
@@ -92,6 +94,8 @@ button {
     .container {
         padding: 15px 15px !important;
         margin: 0 auto !important;
+        max-width: 100%;
+        min-height: 100vh; /* Ensure the form takes the full screen height */
         box-sizing: border-box;
     }
 
