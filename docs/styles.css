@@ -1,120 +1,36 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+/* Ensure date picker buttons are fully visible */
+input[type="date"] {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #eef2f7;
+    padding: 10px;
     box-sizing: border-box;
-    overflow-x: hidden; /* Ensure no horizontal scroll */
 }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px; /* Limits width to 600px for large screens */
-    box-sizing: border-box;
-    margin: 20px auto;
-}
-
-/* Mobile-first: General styles apply to smaller screens */
-@media (max-width: 768px) {
+/* Media queries for larger screens */
+@media (min-width: 1024px) {
     .container {
-        padding: 15px;
-        margin: 0 10px; /* Padding around the form */
-        max-width: 100%; /* Full width on mobile */
+        max-width: 600px;
+        margin: 0 auto;
     }
 }
 
-h1 {
-    text-align: center;
-    color: #2c3e50;
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-    color: #34495e;
-    font-size: 16px;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    border: 1px solid #bdc3c7;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-.signature {
-    border: 2px dashed #bdc3c7;
-    border-radius: 6px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-button {
-    width: 100%;
-    padding: 15px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-    button:hover {
-        background-color: #2980b9;
-    }
-
-/* Small device adjustments */
+/* Media queries for smaller screens, like iPhone 14 Pro Max */
 @media (max-width: 480px) {
     .container {
         padding: 10px;
         margin: 0 auto;
+        max-width: 100%;
     }
 
-    h1 {
-        font-size: 20px;
-    }
-
-    label {
-        font-size: 13px;
-    }
-
-    input, select, textarea {
-        font-size: 13px;
+    input[type="date"] {
+        width: 100%;
         padding: 8px;
     }
+}
 
-    button {
-        padding: 10px;
-        font-size: 13px;
-    }
-
-    .signature {
-        height: 100px;
-    }
+/* General container styling */
+.container {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 100%;
+    box-sizing: border-box;
 }
