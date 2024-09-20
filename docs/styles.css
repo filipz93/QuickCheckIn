@@ -14,19 +14,19 @@ html, body {
 body {
     display: flex;
     justify-content: center;
-    align-items: center; /* Center vertically */
-    min-height: 100vh; /* Full viewport height */
+    align-items: flex-start; /* Ensures that the form starts near the top */
+    min-height: 100vh;
 }
 
 .container {
     background-color: white;
-    padding: 20px; /* General padding */
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    max-width: 430px; /* Matches the current size of the container */
+    max-width: 100%; /* Ensure it never exceeds the viewport width */
     width: 100%;
     box-sizing: border-box;
-    margin: 20px; /* Slight margin for spacing */
+    margin: 20px 15px; /* Small margin to prevent the form from touching the edges */
 }
 
 h1 {
