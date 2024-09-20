@@ -104,70 +104,45 @@ button {
         .privacy-policy a:hover {
             text-decoration: underline;
         }
-
 /* Media Query for Devices with Screen Widths of 768px and Less (Tablets, Mobile) */
 @media (max-width: 768px) {
     body {
-        justify-content: center;
+        justify-content: center; /* Ensures content is centered */
         padding-top: 20px;
     }
 
     .container {
-        padding: 30px 30px; /* Added more padding on the left and right for mobile */
-        margin: 0 20px;
-        max-width: 100%;
-        box-shadow: none;
+        padding: 30px 30px !important; /* Increased padding with important flag */
+        margin: 0 auto; /* Ensures margin is evenly distributed */
+        max-width: 100%; /* Limits width to device width */
+        box-shadow: none; /* Optional: removes shadow for a cleaner look */
     }
 
-    h1 {
-        font-size: 24px;
-    }
-
-    label {
-        font-size: 14px;
-    }
-
-    input, select, textarea {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    button {
-        padding: 12px;
-        font-size: 14px;
+    h1, label, input, select, textarea, button {
+        font-size: 14px; /* Adjusts font size for readability on smaller screens */
     }
 
     .signature {
-        height: 120px;
+        height: 120px; /* Adjusts the signature box height */
     }
 }
 
 /* Media Query for Devices with Screen Widths of 480px and Less (Smaller Mobile Screens) */
 @media (max-width: 480px) {
     .container {
-        padding: 25px 20px; /* Ensure padding on both sides */
-        margin: 0 10px;
+        padding: 25px 20px !important; /* Slightly less padding on the smallest screens */
+        margin: 0 10px; /* Reduces side margin */
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 20px; /* Smaller font size for very small devices */
     }
 
-    label {
-        font-size: 13px;
-    }
-
-    input, select, textarea {
-        font-size: 13px;
-        padding: 8px;
-    }
-
-    button {
-        padding: 10px;
-        font-size: 13px;
+    label, input, select, textarea, button {
+        font-size: 13px; /* Smaller font sizes for compact appearance */
     }
 
     .signature {
-        height: 100px;
+        height: 100px; /* Smaller signature box suitable for smaller screens */
     }
 }
