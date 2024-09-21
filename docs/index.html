@@ -11,8 +11,8 @@
 <div class="container">
     <!-- Language Selector with Flags -->
     <div class="language-picker">
-        <img src="assets/images/english-flag.png" alt="English" class="flag-icon" id="english-flag" data-lang="en">
-        <img src="assets/images/serbian-flag.png" alt="Serbian" class="flag-icon" id="serbian-flag" data-lang="sr">
+        <img src="path-to-english-flag.png" alt="English" class="flag-icon" id="english-flag" data-lang="en">
+        <img src="path-to-serbian-flag.png" alt="Serbian" class="flag-icon" id="serbian-flag" data-lang="sr">
     </div>
 
     <!-- Progress Steps -->
@@ -38,7 +38,7 @@
             </div>
 
             <!-- Hidden input to hold the citizenship status -->
-            <input type="hidden" id="citizenship-status" name="citizenship" value="domestic">
+            <input type="hidden" id="citizenship-status" name="citizenship" value="foreign">
 
             <!-- Other form fields -->
             <label for="email" data-lang="email">Email *</label>
@@ -53,7 +53,7 @@
             <label for="dob" data-lang="dob">Date of Birth *</label>
             <input type="date" id="dob" name="dob" required>
 
-            <button type="button" class="next-btn">Next</button>
+            <button type="button" class="next-btn" data-lang="submit">Next</button>
         </div>
     </form>
 </div>
