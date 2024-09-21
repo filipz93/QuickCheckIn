@@ -170,7 +170,7 @@ button {
 }
 
 .step {
-    width: 33%;
+    width: 100%;
     position: relative;
     text-align: center;
     font-size: 16px;
@@ -181,7 +181,6 @@ button {
     transition: color 0.4s, border-color 0.4s;
 }
 
-    /* Active step styling */
     .step.active {
         color: #007bff;
         border-bottom: 3px solid #007bff;
@@ -194,8 +193,8 @@ button {
         top: -25px;
         left: 50%;
         transform: translateX(-50%);
-        height: 15px;
-        width: 15px;
+        height: 20px;
+        width: 20px;
         background-color: #bbb;
         border-radius: 50%;
         border: 3px solid #fff;
@@ -207,66 +206,20 @@ button {
         border-color: #007bff;
     }
 
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="date"],
-    select {
-        font-size: 14px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
     .progress-container {
-        flex-direction: column;
+        flex-direction: row; /* Maintain steps in a row */
+        justify-content: space-between;
+        margin-bottom: 20px;
     }
 
     .step {
-        width: 100%;
-        margin-bottom: 10px;
-        border-bottom: none;
-        text-align: left;
+        font-size: 14px; /* Reduce text size for smaller screens */
     }
 
         .step::before {
-            top: 0;
-            left: 0;
-            transform: none;
+            height: 12px; /* Adjust circle size for smaller screens */
+            width: 12px;
         }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="date"],
-    select {
-        font-size: 13px;
-        padding: 10px;
-    }
-
-    button {
-        font-size: 13px;
-        padding: 8px;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
 }
