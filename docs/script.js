@@ -57,19 +57,30 @@ document.getElementById('language').addEventListener('change', function () {
 // Initialize form with English as default language
 updateLanguage('en');
 
-// Handle multi-step form
+// Multi-step form functionality
 let currentStep = 0;
-const steps = document.querySelectorAll('.form-step'); // Get all steps
-const nextBtns = document.querySelectorAll('.next-btn'); // Get next buttons
-const prevBtns = document.querySelectorAll('.prev-btn'); // Get previous buttons
+const steps = document.querySelectorAll('.form-step');
+const nextBtns = document.querySelectorAll('.next-btn');
+const prevBtns = document.querySelectorAll('.prev-btn');
+const progressSteps = document.querySelectorAll('.progress-container .step');
 
-// Function to show a specific step
+// Function to show a specific step and update progress
 function showStep(stepIndex) {
+    // Show current step
     steps.forEach((step, index) => {
         if (index === stepIndex) {
-            step.style.display = 'block'; // Show current step
+            step.style.display = 'block';
         } else {
-            step.style.display = 'none';  // Hide other steps
+            step.style.display = 'none';
+        }
+    });
+
+    // Update progress indicator
+    progressSteps.forEach((step, index) => {
+        if (index <= stepIndex) {
+            step.classList.add('active');
+        } else {
+            step.classList.remove('active');
         }
     });
 }
@@ -78,7 +89,7 @@ function showStep(stepIndex) {
 showStep(currentStep);
 
 // Next button click event
-nextBtns.forEach((btn, index) => {
+nextBtns.forEach((btn) => {
     btn.addEventListener('click', function () {
         if (currentStep < steps.length - 1) {
             currentStep += 1;
@@ -88,7 +99,7 @@ nextBtns.forEach((btn, index) => {
 });
 
 // Previous button click event
-prevBtns.forEach((btn, index) => {
+prevBtns.forEach((btn) => {
     btn.addEventListener('click', function () {
         if (currentStep > 0) {
             currentStep -= 1;

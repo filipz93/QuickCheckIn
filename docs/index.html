@@ -18,13 +18,17 @@
         </select>
     </div>
 
-    <h1 data-lang="form-title">Guest Check-In Form</h1>
+    <!-- Progress Steps -->
+    <div class="progress-container">
+        <div class="step active">Step 1</div>
+        <div class="step">Step 2</div>
+        <div class="step">Step 3</div>
+    </div>
 
     <form id="checkinForm">
         <!-- Step 1 -->
         <div class="form-step" id="step-1">
-            <h2>Step 1: Personal Information</h2>
-
+            <h2>Personal Information</h2>
             <label for="email" data-lang="email">Email *</label>
             <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
@@ -42,7 +46,7 @@
 
         <!-- Step 2 -->
         <div class="form-step" id="step-2" style="display: none;">
-            <h2>Step 2: Nationality and Passport</h2>
+            <h2>Nationality and Passport</h2>
 
             <label for="nationality" data-lang="nationality">Nationality *</label>
             <select id="nationality" name="nationality" required>
@@ -66,7 +70,7 @@
 
         <!-- Step 3 -->
         <div class="form-step" id="step-3" style="display: none;">
-            <h2>Step 3: Signature and Agreement</h2>
+            <h2>Signature and Agreement</h2>
 
             <label for="signature" data-lang="signature">Signature *</label>
             <div class="signature">
