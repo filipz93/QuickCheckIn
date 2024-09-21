@@ -175,7 +175,7 @@ button {
     width: 40px;
     height: 40px;
     background-color: #bbb;
-    border-radius: 50%; /* Ensure it's always a circle */
+    border-radius: 50%; /* Perfect circle */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,9 +183,9 @@ button {
     color: white;
     font-size: 18px;
     position: relative;
-    line-height: 1; /* Ensure the text is vertically centered */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+    padding: 0; /* Ensure no extra padding */
+    margin: 0; /* Ensure no margin affecting size */
+    line-height: 1; /* Ensure text stays centered */
 }
 
     .circle.active {
@@ -199,7 +199,7 @@ button {
     width: 100%;
     background-color: #bbb; /* Inactive line color */
     position: relative;
-    top: 0; /* Center the line with the circles */
+    top: 0; /* Align the line with the circles */
 }
 
 .circle.active + .line {
