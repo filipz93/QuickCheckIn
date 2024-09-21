@@ -88,7 +88,7 @@ body {
 }
 
     .toggle-container.active .toggle-knob {
-        transform: translateX(30px); /* Moves knob to the right */
+        transform: translateX(33px); /* Moves knob to the right */
     }
 
 /* Styling for select fields to make them consistent */
