@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const toggleContainer = document.getElementById('citizenship-toggle');
     const citizenshipInput = document.getElementById('citizenship-status');
+    const domesticFields = document.getElementById('domestic-fields'); // Domestic-specific fields
 
     toggleContainer.addEventListener('click', function () {
         toggleContainer.classList.toggle('active');
@@ -9,8 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Update the hidden input based on the toggle's state
         if (toggleContainer.classList.contains('active')) {
             citizenshipInput.value = 'domestic'; // Yes selected
+            domesticFields.style.display = 'block'; // Show domestic fields
         } else {
             citizenshipInput.value = 'foreign'; // No selected
+            domesticFields.style.display = 'none'; // Hide domestic fields
         }
     });
 
