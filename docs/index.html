@@ -19,55 +19,67 @@
     </div>
 
     <h1 data-lang="form-title">Guest Check-In Form</h1>
-    
+
     <form id="checkinForm">
-        <label for="email" data-lang="email">Email *</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        <!-- Step 1 -->
+        <div class="form-step" id="step-1">
+            <h2>Step 1: Personal Information</h2>
 
-        <label for="nationality" data-lang="nationality">Nationality *</label>
-        <select id="nationality" name="nationality" required>
-            <option value="Serbia">Serbia</option>
-            <option value="Croatia">Croatia</option>
-            <option value="Other">Other</option>
-        </select>
+            <label for="email" data-lang="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-        <label for="sex" data-lang="sex">Sex *</label>
-        <select id="sex" name="sex" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
+            <label for="firstname" data-lang="firstname">First Name *</label>
+            <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
 
-        <label for="firstname" data-lang="firstname">First Name *</label>
-        <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
+            <label for="lastname" data-lang="lastname">Last Name *</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
 
-        <label for="lastname" data-lang="lastname">Last Name *</label>
-        <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+            <label for="dob" data-lang="dob">Date of Birth *</label>
+            <input type="date" id="dob" name="dob" required>
 
-        <label for="dob" data-lang="dob">Date of Birth *</label>
-        <input type="date" id="dob" name="dob" required>
-
-        <label for="address" data-lang="address">Address *</label>
-        <input type="text" id="address" name="address" placeholder="Your Address" required>
-
-        <label for="passport" data-lang="passport">Passport Number *</label>
-        <input type="text" id="passport" name="passport" placeholder="Passport Number" required>
-
-        <label for="issue-date" data-lang="issue-date">Issue Date *</label>
-        <input type="date" id="issue-date" name="issue-date" required>
-
-        <label for="expiry-date" data-lang="expiry-date">Expiry Date *</label>
-        <input type="date" id="expiry-date" name="expiry-date" required>
-
-        <label for="signature" data-lang="signature">Signature *</label>
-        <div class="signature">
-            <canvas id="signatureCanvas" width="500" height="150"></canvas>
+            <button type="button" class="next-btn">Next</button>
         </div>
-        <button type="button" id="clearSignature" data-lang="clear-signature">Clear Signature</button>
 
-        <input type="checkbox" id="agree" name="agree" required>
-        <label for="agree" class="privacy-policy" data-lang="privacy-policy">I agree with the <a href="#">Terms and Conditions</a>.</label>
+        <!-- Step 2 -->
+        <div class="form-step" id="step-2" style="display: none;">
+            <h2>Step 2: Nationality and Passport</h2>
 
-        <button type="submit" data-lang="submit">Submit</button>
+            <label for="nationality" data-lang="nationality">Nationality *</label>
+            <select id="nationality" name="nationality" required>
+                <option value="Serbia">Serbia</option>
+                <option value="Croatia">Croatia</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="passport" data-lang="passport">Passport Number *</label>
+            <input type="text" id="passport" name="passport" placeholder="Passport Number" required>
+
+            <label for="issue-date" data-lang="issue-date">Issue Date *</label>
+            <input type="date" id="issue-date" name="issue-date" required>
+
+            <label for="expiry-date" data-lang="expiry-date">Expiry Date *</label>
+            <input type="date" id="expiry-date" name="expiry-date" required>
+
+            <button type="button" class="prev-btn">Previous</button>
+            <button type="button" class="next-btn">Next</button>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="form-step" id="step-3" style="display: none;">
+            <h2>Step 3: Signature and Agreement</h2>
+
+            <label for="signature" data-lang="signature">Signature *</label>
+            <div class="signature">
+                <canvas id="signatureCanvas" width="500" height="150"></canvas>
+            </div>
+            <button type="button" id="clearSignature" data-lang="clear-signature">Clear Signature</button>
+
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree" class="privacy-policy" data-lang="privacy-policy">I agree with the <a href="#">Terms and Conditions</a>.</label>
+
+            <button type="button" class="prev-btn">Previous</button>
+            <button type="submit" data-lang="submit">Submit</button>
+        </div>
     </form>
 </div>
 

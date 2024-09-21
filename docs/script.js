@@ -56,6 +56,42 @@ document.getElementById('language').addEventListener('change', function () {
 // Initialize form with English as default language
 updateLanguage('en');
 
+// Handle multi-step form
+let currentStep = 0;
+const steps = document.querySelectorAll('.form-step');
+const nextBtns = document.querySelectorAll('.next-btn');
+const prevBtns = document.querySelectorAll('.prev-btn');
+
+function showStep(step) {
+    steps.forEach((el, index) => {
+        if (index === step) {
+            el.classList.add('active');
+        } else {
+            el.classList.remove('active');
+        }
+    });
+}
+
+nextBtns.forEach((btn, index) => {
+    btn.addEventListener('click', function () {
+        currentStep = currentStep + 1;
+        if (currentStep < steps.length) {
+            showStep(currentStep);
+        }
+    });
+});
+
+prevBtns.forEach((btn, index) => {
+    btn.addEventListener('click', function () {
+        currentStep = currentStep - 1;
+        if (currentStep >= 0) {
+            showStep(currentStep);
+        }
+    });
+});
+
+showStep(currentStep);
+
 document.getElementById('clearSignature').addEventListener('click', function () {
     signaturePad.clear();
 });
