@@ -26,12 +26,12 @@ body {
     height: 25px;
     margin-right: 10px;
     cursor: pointer;
-    border: 2px solid transparent; /* Default no border */
+    border: 2px solid transparent;
     transition: border-color 0.3s ease;
 }
 
     .flag-icon.active {
-        border: 2px solid blue; /* Blue border for active/selected flag */
+        border: 2px solid blue;
     }
 
     .flag-icon:hover {
