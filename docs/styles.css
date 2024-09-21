@@ -175,7 +175,7 @@ button {
     width: 40px;
     height: 40px;
     background-color: #bbb;
-    border-radius: 50%;
+    border-radius: 50%; /* This ensures the circle shape */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,6 +183,8 @@ button {
     color: white;
     font-size: 18px;
     position: relative;
+    line-height: 1; /* Ensure the text is vertically centered */
+    transition: background-color 0.4s, color 0.4s;
 }
 
     .circle.active {
@@ -196,11 +198,24 @@ button {
     width: 100%;
     background-color: #bbb; /* Inactive line color */
     position: relative;
-    top: -5px; /* Align the line with the center of the circles */
+    top: 0; /* Center the line with the circles */
 }
 
 .circle.active + .line {
     background-color: #007bff; /* Active line color */
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 480px) {
+    .circle {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .line {
+        height: 2px;
+    }
 }
 
 /* Mobile-friendly adjustments */
