@@ -151,6 +151,15 @@ button {
             background-color: #d32f2f;
         }
 
+/* Hide steps initially */
+.form-step {
+    display: none;
+}
+
+    .form-step.active {
+        display: block;
+    }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -173,15 +182,6 @@ button {
         font-size: 24px;
     }
 }
-
-/* Add this to your existing CSS */
-.form-step {
-    display: none; /* Hide all steps initially */
-}
-
-    .form-step.active {
-        display: block; /* Display active step */
-    }
 
 @media (max-width: 480px) {
     .container {

@@ -1,4 +1,5 @@
-﻿const canvas = document.getElementById('signatureCanvas');
+﻿// Initialize the canvas for the signature
+const canvas = document.getElementById('signatureCanvas');
 const signaturePad = new SignaturePad(canvas);
 
 // Add translations for both English and Serbian
@@ -58,24 +59,25 @@ updateLanguage('en');
 
 // Handle multi-step form
 let currentStep = 0;
-const steps = document.querySelectorAll('.form-step');
-const nextBtns = document.querySelectorAll('.next-btn');
-const prevBtns = document.querySelectorAll('.prev-btn');
+const steps = document.querySelectorAll('.form-step'); // Get all steps
+const nextBtns = document.querySelectorAll('.next-btn'); // Get next buttons
+const prevBtns = document.querySelectorAll('.prev-btn'); // Get previous buttons
 
-// Function to show the current step
-function showStep(step) {
-    steps.forEach((el, index) => {
-        if (index === step) {
-            el.classList.add('active');
-            el.style.display = 'block'; // Show current step
+// Function to show a specific step
+function showStep(stepIndex) {
+    steps.forEach((step, index) => {
+        if (index === stepIndex) {
+            step.style.display = 'block'; // Show current step
         } else {
-            el.classList.remove('active');
-            el.style.display = 'none';  // Hide other steps
+            step.style.display = 'none';  // Hide other steps
         }
     });
 }
 
-// Event listeners for "Next" buttons
+// Show the first step when the form loads
+showStep(currentStep);
+
+// Next button click event
 nextBtns.forEach((btn, index) => {
     btn.addEventListener('click', function () {
         if (currentStep < steps.length - 1) {
@@ -85,7 +87,7 @@ nextBtns.forEach((btn, index) => {
     });
 });
 
-// Event listeners for "Previous" buttons
+// Previous button click event
 prevBtns.forEach((btn, index) => {
     btn.addEventListener('click', function () {
         if (currentStep > 0) {
@@ -95,13 +97,12 @@ prevBtns.forEach((btn, index) => {
     });
 });
 
-// Initialize form with the first step visible
-showStep(currentStep);
-
+// Clear the signature canvas
 document.getElementById('clearSignature').addEventListener('click', function () {
     signaturePad.clear();
 });
 
+// Form submit event
 document.getElementById('checkinForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
