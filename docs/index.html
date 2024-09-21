@@ -15,10 +15,6 @@
     <img src="assets/images/serbian-flag.png" alt="Serbian" class="flag-icon" id="serbian-flag" data-lang="sr">
 </div>
 
-
-
-
-
     <!-- Progress Steps -->
     <div class="progress-container">
         <div class="circle active">1</div>
@@ -32,6 +28,15 @@
         <!-- Step 1 -->
         <div class="form-step" id="step-1">
             <h2>Personal Information</h2>
+            <label for="citizenship" data-lang="citizenship">Are you a citizen of Serbia? *</label>
+            <div>
+                <input type="radio" id="domestic" name="citizenship" value="domestic" required>
+                <label for="domestic" data-lang="domestic">Yes</label>
+        
+                <input type="radio" id="foreign" name="citizenship" value="foreign" required>
+                <label for="foreign" data-lang="foreign">No</label>
+            </div>
+
             <label for="email" data-lang="email">Email *</label>
             <input type="email" id="email" name="email" placeholder="you@example.com" required>
 

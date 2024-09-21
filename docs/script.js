@@ -9,7 +9,13 @@ const nextBtns = document.querySelectorAll('.next-btn');
 const prevBtns = document.querySelectorAll('.prev-btn');
 const circles = document.querySelectorAll('.progress-container .circle');
 const lines = document.querySelectorAll('.progress-container .line');
-const languagePicker = document.getElementById('language-picker'); // Get the flag language picker
+const languagePicker = document.getElementById('language-picker');
+
+// Citizenship selection elements
+const domesticRadio = document.getElementById('domestic');
+const foreignRadio = document.getElementById('foreign');
+const domesticFields = document.getElementById('domestic-fields');
+const foreignFields = document.getElementById('foreign-fields');
 
 // Function to show a specific step and update progress
 function showStep(stepIndex) {
@@ -37,9 +43,22 @@ function showStep(stepIndex) {
 
     // Hide the language picker after Step 1
     if (stepIndex === 0) {
-        languagePicker.style.display = 'flex'; // Show language picker on Step 1
+        languagePicker.style.display = 'flex';
     } else {
-        languagePicker.style.display = 'none'; // Hide language picker on Step 2 and beyond
+        languagePicker.style.display = 'none';
+    }
+
+    // Handle citizenship logic on Step 2
+    if (stepIndex === 1) {
+        if (domesticRadio.checked) {
+            // Show domestic-specific fields
+            domesticFields.style.display = 'block';
+            foreignFields.style.display = 'none';
+        } else if (foreignRadio.checked) {
+            // Show foreign-specific fields
+            foreignFields.style.display = 'block';
+            domesticFields.style.display = 'none';
+        }
     }
 }
 
@@ -134,25 +153,8 @@ const flagIcons = document.querySelectorAll('.flag-icon');
 
 flagIcons.forEach(flag => {
     flag.addEventListener('click', function () {
-        // Remove active class from all flags
         flagIcons.forEach(f => f.classList.remove('active'));
-
-        // Add active class to the clicked flag
         this.classList.add('active');
-
-        // Set the selected language
-        const selectedLanguage = this.getAttribute('data-lang');
-        setLanguage(selectedLanguage);
+        setLanguage(this.getAttribute('data-lang'));
     });
-});
-
-// Event Listeners for Flag Clicks (Fallback for individual flags, optional)
-document.getElementById('english-flag').addEventListener('click', function () {
-    setLanguage('en');
-    this.classList.add('active'); // Highlight the selected flag
-});
-
-document.getElementById('serbian-flag').addEventListener('click', function () {
-    setLanguage('sr');
-    this.classList.add('active'); // Highlight the selected flag
 });
