@@ -7,11 +7,12 @@ let currentStep = 0;
 const steps = document.querySelectorAll('.form-step');
 const nextBtns = document.querySelectorAll('.next-btn');
 const prevBtns = document.querySelectorAll('.prev-btn');
-const progressSteps = document.querySelectorAll('.progress-container .step');
+const circles = document.querySelectorAll('.progress-container .circle');
+const lines = document.querySelectorAll('.progress-container .line');
 
 // Function to show a specific step and update progress
 function showStep(stepIndex) {
-    // Show current step
+    // Show current form step
     steps.forEach((step, index) => {
         if (index === stepIndex) {
             step.style.display = 'block';
@@ -20,12 +21,20 @@ function showStep(stepIndex) {
         }
     });
 
-    // Update progress indicator
-    progressSteps.forEach((step, index) => {
+    // Update progress circles and lines
+    circles.forEach((circle, index) => {
         if (index <= stepIndex) {
-            step.classList.add('active');
+            circle.classList.add('active');
         } else {
-            step.classList.remove('active');
+            circle.classList.remove('active');
+        }
+    });
+
+    lines.forEach((line, index) => {
+        if (index < stepIndex) {
+            line.style.backgroundColor = '#007bff'; // Active line color
+        } else {
+            line.style.backgroundColor = '#bbb'; // Inactive line color
         }
     });
 }
