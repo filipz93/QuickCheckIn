@@ -123,6 +123,22 @@ button {
     }
 }
 
+.language-picker {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+    .language-picker label {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .language-picker select {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+
 @media (max-width: 480px) {
     .container {
         padding: 10px;

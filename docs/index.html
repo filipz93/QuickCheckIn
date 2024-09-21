@@ -9,56 +9,65 @@
 <body>
 
 <div class="container">
-    <h1>Guest Check-In Form</h1>
+    <!-- Language Selector -->
+    <div class="language-picker">
+        <label for="language">Choose Language:</label>
+        <select id="language" name="language">
+            <option value="en">English</option>
+            <option value="sr">Serbian</option>
+        </select>
+    </div>
+
+    <h1 data-lang="form-title">Guest Check-In Form</h1>
     
     <form id="checkinForm">
-        <label for="email">Email *</label>
+        <label for="email" data-lang="email">Email *</label>
         <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-        <label for="nationality">Nationality *</label>
+        <label for="nationality" data-lang="nationality">Nationality *</label>
         <select id="nationality" name="nationality" required>
             <option value="Serbia">Serbia</option>
             <option value="Croatia">Croatia</option>
             <option value="Other">Other</option>
         </select>
 
-        <label for="sex">Sex *</label>
+        <label for="sex" data-lang="sex">Sex *</label>
         <select id="sex" name="sex" required>
             <option value="male">Male</option>
             <option value="female">Female</option>
         </select>
 
-        <label for="firstname">First Name *</label>
+        <label for="firstname" data-lang="firstname">First Name *</label>
         <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
 
-        <label for="lastname">Last Name *</label>
+        <label for="lastname" data-lang="lastname">Last Name *</label>
         <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
 
-        <label for="dob">Date of Birth *</label>
+        <label for="dob" data-lang="dob">Date of Birth *</label>
         <input type="date" id="dob" name="dob" required>
 
-        <label for="address">Address *</label>
+        <label for="address" data-lang="address">Address *</label>
         <input type="text" id="address" name="address" placeholder="Your Address" required>
 
-        <label for="passport">Passport Number *</label>
+        <label for="passport" data-lang="passport">Passport Number *</label>
         <input type="text" id="passport" name="passport" placeholder="Passport Number" required>
 
-        <label for="issue-date">Issue Date *</label>
+        <label for="issue-date" data-lang="issue-date">Issue Date *</label>
         <input type="date" id="issue-date" name="issue-date" required>
 
-        <label for="expiry-date">Expiry Date *</label>
+        <label for="expiry-date" data-lang="expiry-date">Expiry Date *</label>
         <input type="date" id="expiry-date" name="expiry-date" required>
 
-        <label for="signature">Signature *</label>
+        <label for="signature" data-lang="signature">Signature *</label>
         <div class="signature">
             <canvas id="signatureCanvas" width="500" height="150"></canvas>
         </div>
-        <button type="button" id="clearSignature">Clear Signature</button>
+        <button type="button" id="clearSignature" data-lang="clear-signature">Clear Signature</button>
 
         <input type="checkbox" id="agree" name="agree" required>
-        <label for="agree" class="privacy-policy">I agree with the <a href="#">Terms and Conditions</a>.</label>
+        <label for="agree" class="privacy-policy" data-lang="privacy-policy">I agree with the <a href="#">Terms and Conditions</a>.</label>
 
-        <button type="submit">Submit</button>
+        <button type="submit" data-lang="submit">Submit</button>
     </form>
 </div>
 
