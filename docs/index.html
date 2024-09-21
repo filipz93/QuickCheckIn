@@ -57,7 +57,13 @@
             <input type="text" id="birth-country" name="birth-country" placeholder="Country" required>   
 
             <label for="birth-place" data-lang="birthplace">Place of Birth *</label>
-            <input type="text" id="birth-place" name="birth-place" placeholder="City" required>   
+            <input type="text" id="birth-place" name="birth-place" placeholder="City" required>  
+            
+            <!-- Additional questions for foreign citizens -->
+            <div id="foreign-fields" style="display: block;">
+                <label for="citizenshipLabel" data-lang="citizenship">Citizenship *</label>
+                <input type="text" id="citizenship" name="citizenship" placeholder="Citizenship" required>
+            </div>
 
             <!-- Additional questions for domestic citizens -->
             <div id="domestic-fields" style="display: none;">
@@ -75,11 +81,6 @@
             </div>
 
             
-            <!-- Additional questions for foreign citizens -->
-            <div id="foreign-fields" style="display: none;">
-                <label for="citizenshipLabel" data-lang="citizenship">Citizenship *</label>
-                <input type="text" id="citizenship" name="citizenship" placeholder="Citizenship" required>
-            </div>
 
             
 
