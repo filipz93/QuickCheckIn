@@ -17,6 +17,10 @@ const foreignRadio = document.getElementById('foreign');
 const domesticFields = document.getElementById('domestic-fields');
 const foreignFields = document.getElementById('foreign-fields');
 
+// Toggle for citizenship (custom toggle button)
+const toggleContainer = document.getElementById('citizenship-toggle');
+const citizenshipInput = document.getElementById('citizenship-status');
+
 // Function to show a specific step and update progress
 function showStep(stepIndex) {
     // Show current form step
@@ -41,21 +45,12 @@ function showStep(stepIndex) {
         }
     });
 
-    // Hide the language picker after Step 1
-    //if (stepIndex === 0) {
-    //    languagePicker.style.display = 'flex';
-    //} else {
-    //    languagePicker.style.display = 'none';
-    //}
-
     // Handle citizenship logic on Step 2
     if (stepIndex === 1) {
-        if (domesticRadio.checked) {
-            // Show domestic-specific fields
+        if (citizenshipInput.value === 'domestic') {
             domesticFields.style.display = 'block';
             foreignFields.style.display = 'none';
-        } else if (foreignRadio.checked) {
-            // Show foreign-specific fields
+        } else if (citizenshipInput.value === 'foreign') {
             foreignFields.style.display = 'block';
             domesticFields.style.display = 'none';
         }
@@ -157,4 +152,16 @@ flagIcons.forEach(flag => {
         this.classList.add('active');
         setLanguage(this.getAttribute('data-lang'));
     });
+});
+
+// Citizenship toggle functionality
+toggleContainer.addEventListener('click', function () {
+    toggleContainer.classList.toggle('active');
+
+    // Update the hidden input based on the toggle's state
+    if (toggleContainer.classList.contains('active')) {
+        citizenshipInput.value = 'domestic'; // Yes selected
+    } else {
+        citizenshipInput.value = 'foreign'; // No selected
+    }
 });

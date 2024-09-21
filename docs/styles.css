@@ -20,137 +20,6 @@ body {
     border-radius: 8px;
 }
 
-.language-picker {
-    text-align: left;
-    margin-bottom: 15px;
-    font-size: 14px;
-}
-
-    .language-picker label {
-        font-weight: bold;
-        margin-right: 8px;
-    }
-
-    .language-picker select {
-        padding: 5px;
-        font-size: 14px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        cursor: pointer;
-        transition: border-color 0.3s ease;
-    }
-
-        .language-picker select:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-
-h1 {
-    text-align: center;
-    color: #333;
-    font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="date"],
-select {
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 100%;
-    transition: border-color 0.3s ease;
-}
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="date"]:focus,
-    select:focus {
-        border-color: #007bff;
-        outline: none;
-    }
-
-input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.privacy-policy {
-    margin-bottom: 20px;
-}
-
-.signature {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-canvas {
-    display: block;
-    width: 100%;
-}
-
-button {
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-    button:hover {
-        background-color: #0056b3;
-    }
-
-    button[type="button"] {
-        background-color: #f44336;
-        margin-bottom: 20px;
-    }
-
-        button[type="button"]:hover {
-            background-color: #d32f2f;
-        }
-
-    /* Multi-step form buttons */
-    button.next-btn, button.prev-btn {
-        margin-top: 10px;
-        padding: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    button.prev-btn {
-        background-color: #f44336;
-    }
-
-        button.next-btn:hover, button.prev-btn:hover {
-            opacity: 0.9;
-        }
-
-        button.prev-btn:hover {
-            background-color: #d32f2f;
-        }
-
 /* Styles for Flag Icons */
 .flag-icon {
     width: 40px;
@@ -169,98 +38,114 @@ button {
         opacity: 0.8;
     }
 
-/* Switch-style radio buttons for Citizenship question */
-#citizenship-question {
-    font-size: 18px;
+/* Citizenship toggle container */
+.toggle-container {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+    .toggle-container .toggle-label {
+        position: absolute;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        z-index: 1;
+    }
+
+        .toggle-container .toggle-label.left {
+            left: 10px;
+        }
+
+        .toggle-container .toggle-label.right {
+            right: 10px;
+        }
+
+/* Toggle knob */
+.toggle-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 36px;
+    height: 36px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.toggle-container.active {
+    background-color: #007bff;
+}
+
+    .toggle-container.active .toggle-knob {
+        transform: translateX(60px); /* Moves knob to the right */
+    }
+
+/* Other form fields */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 20px;
-    padding-top: 10px;
 }
 
-/* Container for switch-style radio buttons */
-.switch-container {
-    display: flex;
-    align-items: center;
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+    padding: 12px;
     margin-bottom: 20px;
-}
-
-    /* Hide the default radio button */
-    .switch-container input[type="radio"] {
-        display: none;
-    }
-
-/* Create the switch style */
-.switch-label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     font-size: 16px;
-    font-weight: 500;
-    position: relative;
-    padding-left: 40px; /* Space for the switch */
+    width: 100%;
 }
 
-    .switch-label::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 34px;
-        height: 20px;
-        background-color: #ccc;
-        border-radius: 20px;
-        transition: background-color 0.3s ease;
+button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+    button:hover {
+        background-color: #0056b3;
     }
 
-    .switch-label::after {
-        content: '';
-        position: absolute;
-        left: 2px;
-        top: 2px;
-        width: 16px;
-        height: 16px;
-        background-color: white;
-        border-radius: 50%;
-        transition: transform 0.3s ease;
-    }
-
-/* Checked state for the switch */
-input[type="radio"]:checked + .switch-label::before {
-    background-color: #007bff; /* Blue when checked */
-}
-
-input[type="radio"]:checked + .switch-label::after {
-    transform: translateX(14px); /* Move the knob to the right when checked */
-}
-
-/* Hide steps initially */
-.form-step {
-    display: none;
-}
-
-    .form-step.active {
-        display: block;
-    }
-
-/* Progress bar container */
+/* Progress Steps */
 .progress-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 30px 0;
-    position: relative;
-    padding: 0;
-    width: 100%;
 }
 
-/* Circles for steps */
 .circle {
     width: 40px;
     height: 40px;
-    aspect-ratio: 1/1; /* Ensures circle aspect ratio */
     background-color: #bbb;
-    border-radius: 50%; /* Perfect circle */
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -268,17 +153,14 @@ input[type="radio"]:checked + .switch-label::after {
     color: white;
     font-size: 18px;
     position: relative;
-    z-index: 1;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
     .circle.active {
         background-color: #007bff;
         border: 2px solid #007bff;
-        color: white;
     }
 
-/* Step lines */
 .line {
     height: 3px;
     flex: 1;
@@ -286,27 +168,9 @@ input[type="radio"]:checked + .switch-label::after {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 0;
     transition: background-color 0.3s ease;
 }
 
 .circle.active + .line {
     background-color: #007bff;
-}
-
-.line.active {
-    background-color: #007bff;
-}
-
-/* Mobile-friendly adjustments */
-@media (max-width: 480px) {
-    .circle {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-    }
-
-    .line {
-        height: 2px;
-    }
 }
