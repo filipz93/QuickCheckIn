@@ -156,8 +156,16 @@ button {
     height: 25px;
     margin-right: 10px;
     cursor: pointer;
+    border: 2px solid transparent; /* Default no border */
+    transition: border-color 0.3s ease;
 }
 
+    /* Highlight the selected flag */
+    .flag-icon.active {
+        border: 2px solid blue; /* Blue border for active/selected flag */
+    }
+
+    /* Optional hover effect for the flags */
     .flag-icon:hover {
         opacity: 0.8;
     }

@@ -129,11 +129,30 @@ function setLanguage(lang) {
     });
 }
 
-// Event Listeners for Flag Clicks
+// Add click event listeners for language flags
+const flagIcons = document.querySelectorAll('.flag-icon');
+
+flagIcons.forEach(flag => {
+    flag.addEventListener('click', function () {
+        // Remove active class from all flags
+        flagIcons.forEach(f => f.classList.remove('active'));
+
+        // Add active class to the clicked flag
+        this.classList.add('active');
+
+        // Set the selected language
+        const selectedLanguage = this.getAttribute('data-lang');
+        setLanguage(selectedLanguage);
+    });
+});
+
+// Event Listeners for Flag Clicks (Fallback for individual flags, optional)
 document.getElementById('english-flag').addEventListener('click', function () {
     setLanguage('en');
+    this.classList.add('active'); // Highlight the selected flag
 });
 
 document.getElementById('serbian-flag').addEventListener('click', function () {
     setLanguage('sr');
+    this.classList.add('active'); // Highlight the selected flag
 });
