@@ -42,11 +42,11 @@ function showStep(stepIndex) {
     });
 
     // Hide the language picker after Step 1
-    if (stepIndex === 0) {
-        languagePicker.style.display = 'flex';
-    } else {
-        languagePicker.style.display = 'none';
-    }
+    //if (stepIndex === 0) {
+    //    languagePicker.style.display = 'flex';
+    //} else {
+    //    languagePicker.style.display = 'none';
+    //}
 
     // Handle citizenship logic on Step 2
     if (stepIndex === 1) {
