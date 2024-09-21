@@ -186,7 +186,7 @@ button {
         border-bottom: 3px solid #007bff;
     }
 
-    /* Optional step indicator circle if desired */
+    /* Circle indicator */
     .step::before {
         content: '';
         position: absolute;
