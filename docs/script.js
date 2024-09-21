@@ -83,18 +83,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const translations = {
         en: {
             "citizenship": "Are you a citizen of Serbia? *",
+            "citizenshipLabel": "Citizenship *", 
+            "municipality": "Municipality of residence *",
+            "residencePlace": "Place of residence *", 
+            "residenceCountry": "Country of residence *",
             "email": "Email *",
             "firstname": "First Name *",
             "lastname": "Last Name *",
             "dob": "Date of Birth *",
+            "birthcountry": "Country of Birth *",
+            "birthplace": "Place of Birth *",
             "submit": "Next"
         },
         sr: {
             "citizenship": "Da li ste državljanin Srbije? *",
+            "citizenshipLabel": "Državljanstvo *",
+            "municipality": "Opština prebivališta *",
+            "residencePlace": "Mesto prebivališta *",
+            "residenceCountry": "Država prebivališta *",
             "email": "Email *",
             "firstname": "Ime *",
             "lastname": "Prezime *",
             "dob": "Datum rođenja *",
+            "birthcountry": "Država rodjenja *",
+            "birthplace": "Mesto rodjenja *",
             "submit": "Sledeći"
         }
     };

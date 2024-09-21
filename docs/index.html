@@ -40,36 +40,10 @@
             <!-- Hidden input to hold the citizenship status -->
             <input type="hidden" id="citizenship-status" name="citizenship" value="foreign">
 
-            <!-- Additional questions for domestic citizens -->
-            <div id="domestic-fields" style="display: none;">
-                <label for="jmbg">JMBG *</label>
-                <input type="text" id="jmbg" name="jmbg" placeholder="JMBG" required>
-
-                <label for="birth-country">Country of Birth *</label>
-                <select id="birth-country" name="birth-country" required>
-                    <option value="Serbia">Serbia</option>
-                    <option value="Croatia">Croatia</option>
-                    <option value="Other">Other</option>
-                </select>
-
-                <label for="residence-country">Country of Residence *</label>
-                <select id="residence-country" name="residence-country" required>
-                    <option value="Serbia">Serbia</option>
-                    <option value="Croatia">Croatia</option>
-                    <option value="Other">Other</option>
-                </select>
-
-                <label for="municipality">Municipality *</label>
-                <input type="text" id="municipality" name="municipality" placeholder="Municipality" required>
-
-                <label for="residence-place">Place of Residence *</label>
-                <input type="text" id="residence-place" name="residence-place" placeholder="Place of Residence" required>
-            </div>
-
             <!-- Other form fields -->
-            <label for="email" data-lang="email">Email *</label>
+            <!-- <label for="email" data-lang="email">Email *</label>
             <input type="email" id="email" name="email" placeholder="you@example.com" required>
-
+                 -->
             <label for="firstname" data-lang="firstname">First Name *</label>
             <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
 
@@ -78,6 +52,36 @@
 
             <label for="dob" data-lang="dob">Date of Birth *</label>
             <input type="date" id="dob" name="dob" required>
+
+            <label for="birth-country" data-lang="birthcountry">Country of Birth *</label>
+            <input type="text" id="birth-country" name="birth-country" placeholder="Country" required>   
+
+            <label for="birth-place" data-lang="birthplace">Place of Birth *</label>
+            <input type="text" id="birth-place" name="birth-place" placeholder="City" required>   
+
+            <!-- Additional questions for domestic citizens -->
+            <div id="domestic-fields" style="display: none;">
+                <label for="jmbg">JMBG *</label>
+                <input type="text" id="jmbg" name="jmbg" placeholder="JMBG" required>
+
+                <label for="residence-country" data-lang="residenceCountry">Country of Residence *</label>
+                <input type="text" id="residence-country" name="residence-country" placeholder="Country" required>
+
+                <label for="municipality" data-lang="municipality">Municipality *</label>
+                <input type="text" id="municipality" name="municipality" placeholder="Municipality" required>
+
+                <label for="residence-place" data-lang="residencePlace">Place of Residence *</label>
+                <input type="text" id="residence-place" name="residence-place" placeholder="Place of Residence" required>
+            </div>
+
+            
+            <!-- Additional questions for foreign citizens -->
+            <div id="foreign-fields" style="display: none;">
+                <label for="citizenshipLabel" data-lang="citizenship">Citizenship *</label>
+                <input type="text" id="citizenship" name="citizenship" placeholder="Citizenship" required>
+            </div>
+
+            
 
             <button type="button" class="next-btn" data-lang="submit">Next</button>
         </div>
