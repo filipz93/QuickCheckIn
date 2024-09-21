@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const yesSpan = document.getElementById('yes-span');
     const noSpan = document.getElementById('no-span');
     const domesticFields = document.getElementById('domestic-fields'); // Domestic-specific fields
+    const foreignFields = document.getElementById('foreign-fields'); // Foreign-specific fields
 
     toggleContainer.addEventListener('click', function () {
         toggleContainer.classList.toggle('active');
@@ -15,11 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
             yesSpan.style.display = 'block';
             noSpan.style.display = 'none';
             domesticFields.style.display = 'block'; // Show domestic fields
+            foreignFields.style.display = 'none'; // Hide foreign fields
         } else {
             citizenshipInput.value = 'foreign'; // No selected
             yesSpan.style.display = 'none';
             noSpan.style.display = 'block';
             domesticFields.style.display = 'none'; // Hide domestic fields
+            foreignFields.style.display = 'block'; // Show foreign fields
         }
     });
 
