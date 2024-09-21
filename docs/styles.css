@@ -156,9 +156,9 @@ button {
     display: none;
 }
 
-.form-step.active {
-    display: block;
-}
+    .form-step.active {
+        display: block;
+    }
 
 /* Progress bar container */
 .progress-container {
@@ -166,6 +166,7 @@ button {
     justify-content: space-between;
     margin: 30px 0;
     position: relative;
+    padding: 0;
 }
 
 .step {
@@ -180,31 +181,30 @@ button {
     transition: color 0.4s, border-color 0.4s;
 }
 
-.step.active {
-    color: #007bff;
-    border-bottom: 3px solid #007bff;
-}
+    .step.active {
+        color: #007bff;
+        border-bottom: 3px solid #007bff;
+    }
 
-/* Optional step indicator circle if desired */
-.step::before {
-    content: '';
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 15px;
-    width: 15px;
-    background-color: #bbb;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    transition: background-color 0.4s, border-color 0.4s;
-}
+    /* Optional step indicator circle if desired */
+    .step::before {
+        content: '';
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 15px;
+        width: 15px;
+        background-color: #bbb;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        transition: background-color 0.4s, border-color 0.4s;
+    }
 
-.step.active::before {
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
+    .step.active::before {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -227,6 +227,23 @@ button {
     h1 {
         font-size: 24px;
     }
+
+    .progress-container {
+        flex-direction: column;
+    }
+
+    .step {
+        width: 100%;
+        margin-bottom: 10px;
+        border-bottom: none;
+        text-align: left;
+    }
+
+        .step::before {
+            top: 0;
+            left: 0;
+            transform: none;
+        }
 }
 
 @media (max-width: 480px) {
