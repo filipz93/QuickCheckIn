@@ -14,11 +14,7 @@ const lines = document.querySelectorAll('.progress-container .line');
 function showStep(stepIndex) {
     // Show current form step
     steps.forEach((step, index) => {
-        if (index === stepIndex) {
-            step.style.display = 'block';
-        } else {
-            step.style.display = 'none';
-        }
+        step.style.display = index === stepIndex ? 'block' : 'none';
     });
 
     // Update progress circles and lines
@@ -32,9 +28,9 @@ function showStep(stepIndex) {
 
     lines.forEach((line, index) => {
         if (index < stepIndex) {
-            line.style.backgroundColor = '#007bff'; // Active line color
+            line.classList.add('active');
         } else {
-            line.style.backgroundColor = '#bbb'; // Inactive line color
+            line.classList.remove('active');
         }
     });
 }
@@ -90,11 +86,9 @@ const translations = {
     en: {
         "email": "Email *",
         "nationality": "Nationality *",
-        "sex": "Sex *",
         "firstname": "First Name *",
         "lastname": "Last Name *",
         "dob": "Date of Birth *",
-        "address": "Address *",
         "passport": "Passport Number *",
         "issue-date": "Issue Date *",
         "expiry-date": "Expiry Date *",
@@ -106,11 +100,9 @@ const translations = {
     sr: {
         "email": "Email *",
         "nationality": "Nacionalnost *",
-        "sex": "Pol *",
         "firstname": "Ime *",
         "lastname": "Prezime *",
         "dob": "Datum rođenja *",
-        "address": "Adresa *",
         "passport": "Broj pasoša *",
         "issue-date": "Datum izdavanja *",
         "expiry-date": "Datum isteka *",

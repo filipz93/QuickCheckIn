@@ -171,11 +171,12 @@ button {
     width: 100%;
 }
 
+/* Circles for steps */
 .circle {
     width: 40px;
     height: 40px;
     background-color: #bbb;
-    border-radius: 50%; /* Perfect circle */
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,27 +184,34 @@ button {
     color: white;
     font-size: 18px;
     position: relative;
-    padding: 0; /* Ensure no extra padding */
-    margin: 0; /* Ensure no margin affecting size */
-    line-height: 1; /* Ensure text stays centered */
+    z-index: 1;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
     .circle.active {
-        background-color: #007bff; /* Active step color */
-        border: 2px solid #007bff; /* Add border for active circle */
+        background-color: #007bff;
+        border: 2px solid #007bff;
         color: white;
     }
 
+/* Step lines */
 .line {
     height: 3px;
-    width: 100%;
-    background-color: #bbb; /* Inactive line color */
+    flex: 1;
+    background-color: #bbb;
     position: relative;
-    top: 0; /* Align the line with the circles */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    transition: background-color 0.3s ease;
 }
 
 .circle.active + .line {
-    background-color: #007bff; /* Active line color */
+    background-color: #007bff;
+}
+
+.line.active {
+    background-color: #007bff;
 }
 
 /* Mobile-friendly adjustments */
@@ -211,7 +219,7 @@ button {
     .circle {
         width: 30px;
         height: 30px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .line {
