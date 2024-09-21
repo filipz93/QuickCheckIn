@@ -43,7 +43,7 @@ const translations = {
 function updateLanguage(language) {
     document.querySelectorAll('[data-lang]').forEach(el => {
         const key = el.getAttribute('data-lang');
-        el.textContent = translations[language][key];
+        el.textContent = translations[language][key] || el.textContent;
     });
 }
 
