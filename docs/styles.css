@@ -87,7 +87,7 @@ body {
 }
 
     .toggle-container.active .toggle-knob {
-        transform: translateX(60px); /* Moves knob to the right */
+        transform: translateX(30px); /* Moves knob to the right */
     }
 
 /* Other form fields */
