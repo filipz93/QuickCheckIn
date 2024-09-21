@@ -181,12 +181,13 @@ button {
     transition: color 0.4s, border-color 0.4s;
 }
 
+    /* Active step styling */
     .step.active {
         color: #007bff;
         border-bottom: 3px solid #007bff;
     }
 
-    /* Circle indicator */
+    /* Circle indicator before the step text */
     .step::before {
         content: '';
         position: absolute;
@@ -205,6 +206,7 @@ button {
         background-color: #007bff;
         border-color: #007bff;
     }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

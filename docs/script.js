@@ -1,4 +1,5 @@
-﻿const canvas = document.getElementById('signatureCanvas');
+﻿// Initialize the canvas for the signature
+const canvas = document.getElementById('signatureCanvas');
 const signaturePad = new SignaturePad(canvas);
 
 // Multi-step form functionality
@@ -73,4 +74,48 @@ document.getElementById('checkinForm').addEventListener('submit', function (e) {
 
     alert('Form submitted successfully!');
     console.log('Form data:', formData);
+});
+
+// Language switching functionality
+const translations = {
+    en: {
+        "email": "Email *",
+        "nationality": "Nationality *",
+        "sex": "Sex *",
+        "firstname": "First Name *",
+        "lastname": "Last Name *",
+        "dob": "Date of Birth *",
+        "address": "Address *",
+        "passport": "Passport Number *",
+        "issue-date": "Issue Date *",
+        "expiry-date": "Expiry Date *",
+        "signature": "Signature *",
+        "clear-signature": "Clear Signature",
+        "privacy-policy": "I agree with the Terms and Conditions.",
+        "submit": "Submit"
+    },
+    sr: {
+        "email": "Email *",
+        "nationality": "Nacionalnost *",
+        "sex": "Pol *",
+        "firstname": "Ime *",
+        "lastname": "Prezime *",
+        "dob": "Datum rođenja *",
+        "address": "Adresa *",
+        "passport": "Broj pasoša *",
+        "issue-date": "Datum izdavanja *",
+        "expiry-date": "Datum isteka *",
+        "signature": "Potpis *",
+        "clear-signature": "Obriši potpis",
+        "privacy-policy": "Slažem se sa uslovima korišćenja.",
+        "submit": "Pošalji"
+    }
+};
+
+document.getElementById('language').addEventListener('change', function () {
+    const selectedLanguage = this.value;
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        const key = el.getAttribute('data-lang');
+        el.textContent = translations[selectedLanguage][key];
+    });
 });
