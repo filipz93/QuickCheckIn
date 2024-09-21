@@ -55,6 +55,47 @@
 
             <button type="button" class="next-btn" data-lang="submit">Next</button>
         </div>
+
+         <!-- Step 2 -->
+ <div class="form-step" id="step-2" style="display: none;">
+     <h2>Nationality and Passport</h2>
+
+     <label for="nationality" data-lang="nationality">Nationality *</label>
+     <select id="nationality" name="nationality" required>
+         <option value="Serbia">Serbia</option>
+         <option value="Croatia">Croatia</option>
+         <option value="Other">Other</option>
+     </select>
+
+     <label for="passport" data-lang="passport">Passport Number *</label>
+     <input type="text" id="passport" name="passport" placeholder="Passport Number" required>
+
+     <label for="issue-date" data-lang="issue-date">Issue Date *</label>
+     <input type="date" id="issue-date" name="issue-date" required>
+
+     <label for="expiry-date" data-lang="expiry-date">Expiry Date *</label>
+     <input type="date" id="expiry-date" name="expiry-date" required>
+
+     <button type="button" class="prev-btn">Previous</button>
+     <button type="button" class="next-btn">Next</button>
+ </div>
+
+ <!-- Step 3 -->
+ <div class="form-step" id="step-3" style="display: none;">
+     <h2>Signature and Agreement</h2>
+
+     <label for="signature" data-lang="signature">Signature *</label>
+     <div class="signature">
+         <canvas id="signatureCanvas" width="500" height="150"></canvas>
+     </div>
+     <button type="button" id="clearSignature" data-lang="clear-signature">Clear Signature</button>
+
+     <input type="checkbox" id="agree" name="agree" required>
+     <label for="agree" class="privacy-policy" data-lang="privacy-policy">I agree with the <a href="#">Terms and Conditions</a>.</label>
+
+     <button type="button" class="prev-btn">Previous</button>
+     <button type="submit" data-lang="submit">Submit</button>
+ </div>
     </form>
 </div>
 
