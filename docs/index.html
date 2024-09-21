@@ -28,14 +28,20 @@
         <!-- Step 1 -->
         <div class="form-step" id="step-1">
             <h2>Personal Information</h2>
-            <label for="citizenship" data-lang="citizenship">Are you a citizen of Serbia? *</label>
-            <div>
-                <input type="radio" id="domestic" name="citizenship" value="domestic" required>
-                <label for="domestic" data-lang="domestic">Yes</label>
-        
-                <input type="radio" id="foreign" name="citizenship" value="foreign" required>
-                <label for="foreign" data-lang="foreign">No</label>
+            <!-- Citizenship question with custom radio buttons -->
+            <label id="citizenship-question" data-lang="citizenship">Are you a citizen of Serbia? *</label>
+            <div class="radio-container">
+                <label for="domestic" class="radio-label">
+                    <input type="radio" id="domestic" name="citizenship" value="domestic" required>
+                    <span class="radio-custom"></span> Yes
+                </label>
+
+                <label for="foreign" class="radio-label">
+                    <input type="radio" id="foreign" name="citizenship" value="foreign" required>
+                    <span class="radio-custom"></span> No
+                </label>
             </div>
+
 
             <label for="email" data-lang="email">Email *</label>
             <input type="email" id="email" name="email" placeholder="you@example.com" required>
