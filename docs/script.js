@@ -78,8 +78,8 @@ function showStep(step) {
 // Event listeners for "Next" buttons
 nextBtns.forEach((btn, index) => {
     btn.addEventListener('click', function () {
-        currentStep = currentStep + 1;
-        if (currentStep < steps.length) {
+        if (currentStep < steps.length - 1) {
+            currentStep += 1;
             showStep(currentStep);
         }
     });
@@ -88,8 +88,8 @@ nextBtns.forEach((btn, index) => {
 // Event listeners for "Previous" buttons
 prevBtns.forEach((btn, index) => {
     btn.addEventListener('click', function () {
-        currentStep = currentStep - 1;
-        if (currentStep >= 0) {
+        if (currentStep > 0) {
+            currentStep -= 1;
             showStep(currentStep);
         }
     });
@@ -97,7 +97,6 @@ prevBtns.forEach((btn, index) => {
 
 // Initialize form with the first step visible
 showStep(currentStep);
-
 
 document.getElementById('clearSignature').addEventListener('click', function () {
     signaturePad.clear();
