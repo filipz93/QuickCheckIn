@@ -29,18 +29,14 @@
         <div class="form-step" id="step-1">
             <h2>Personal Information</h2>
 
-            <!-- Citizenship question with custom radio buttons -->
+            <!-- Citizenship question with custom switch-style radio buttons -->
             <label id="citizenship-question" data-lang="citizenship">Are you a citizen of Serbia? *</label>
-            <div class="radio-container">
-                <label for="domestic" class="radio-label">
-                    <input type="radio" id="domestic" name="citizenship" value="domestic" required>
-                    <span class="radio-custom"></span> Yes
-                </label>
+            <div class="switch-container">
+                <input type="radio" id="domestic" name="citizenship" value="domestic" required>
+                <label for="domestic" class="switch-label">Yes</label>
 
-                <label for="foreign" class="radio-label">
-                    <input type="radio" id="foreign" name="citizenship" value="foreign" required>
-                    <span class="radio-custom"></span> No
-                </label>
+                <input type="radio" id="foreign" name="citizenship" value="foreign" required>
+                <label for="foreign" class="switch-label">No</label>
             </div>
 
             <label for="email" data-lang="email">Email *</label>
