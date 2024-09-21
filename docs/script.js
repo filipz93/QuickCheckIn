@@ -9,6 +9,7 @@ const nextBtns = document.querySelectorAll('.next-btn');
 const prevBtns = document.querySelectorAll('.prev-btn');
 const circles = document.querySelectorAll('.progress-container .circle');
 const lines = document.querySelectorAll('.progress-container .line');
+const languagePicker = document.getElementById('language-picker'); // Get the flag language picker
 
 // Function to show a specific step and update progress
 function showStep(stepIndex) {
@@ -33,6 +34,13 @@ function showStep(stepIndex) {
             line.classList.remove('active');
         }
     });
+
+    // Hide the language picker after Step 1
+    if (stepIndex === 0) {
+        languagePicker.style.display = 'flex'; // Show language picker on Step 1
+    } else {
+        languagePicker.style.display = 'none'; // Hide language picker on Step 2 and beyond
+    }
 }
 
 // Show the first step when the form loads
@@ -81,7 +89,7 @@ document.getElementById('checkinForm').addEventListener('submit', function (e) {
     console.log('Form data:', formData);
 });
 
-// Language switching functionality
+// Language switching functionality with flags
 const translations = {
     en: {
         "email": "Email *",
@@ -113,10 +121,19 @@ const translations = {
     }
 };
 
-document.getElementById('language').addEventListener('change', function () {
-    const selectedLanguage = this.value;
+// Function to switch language
+function setLanguage(lang) {
     document.querySelectorAll('[data-lang]').forEach(el => {
         const key = el.getAttribute('data-lang');
-        el.textContent = translations[selectedLanguage][key];
+        el.textContent = translations[lang][key];
     });
+}
+
+// Event Listeners for Flag Clicks
+document.getElementById('english-flag').addEventListener('click', function () {
+    setLanguage('en');
+});
+
+document.getElementById('serbian-flag').addEventListener('click', function () {
+    setLanguage('sr');
 });
