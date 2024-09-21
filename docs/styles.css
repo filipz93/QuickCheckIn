@@ -164,47 +164,58 @@ button {
 .progress-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 30px 0;
     position: relative;
     padding: 0;
-}
-
-.step {
     width: 100%;
-    position: relative;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: #bbb;
-    padding: 10px 0;
-    border-bottom: 3px solid #bbb;
-    transition: color 0.4s, border-color 0.4s;
 }
 
-    .step.active {
-        color: #007bff;
-        border-bottom: 3px solid #007bff;
+.circle {
+    width: 40px;
+    height: 40px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    position: relative;
+}
+
+    .circle.active {
+        background-color: #007bff; /* Active step color */
+        border: 2px solid #007bff; /* Add border for active circle */
+        color: white;
     }
 
-    /* Circle indicator before the step text */
-    .step::before {
-        content: '';
-        position: absolute;
-        top: -25px;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 20px;
-        width: 20px;
-        background-color: #bbb;
-        border-radius: 50%;
-        border: 3px solid #fff;
-        transition: background-color 0.4s, border-color 0.4s;
+.line {
+    height: 3px;
+    width: 100%;
+    background-color: #bbb; /* Inactive line color */
+    position: relative;
+    top: -5px; /* Align the line with the center of the circles */
+}
+
+.circle.active + .line {
+    background-color: #007bff; /* Active line color */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+    .circle {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
     }
 
-    .step.active::before {
-        background-color: #007bff;
-        border-color: #007bff;
+    .line {
+        height: 2px;
     }
+}
+
 
 /* Responsive adjustments for mobile */
 @media (max-width: 480px) {
