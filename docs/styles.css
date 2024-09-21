@@ -150,13 +150,15 @@ button {
     }
 }
 
+/* Add this to your existing CSS */
 .form-step {
     display: none;
 }
 
-    .form-step.active {
-        display: block;
-    }
+.form-step.active {
+    display: block;
+}
+
 
 button.next-btn, button.prev-btn {
     margin-top: 10px;

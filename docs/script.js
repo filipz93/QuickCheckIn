@@ -62,16 +62,20 @@ const steps = document.querySelectorAll('.form-step');
 const nextBtns = document.querySelectorAll('.next-btn');
 const prevBtns = document.querySelectorAll('.prev-btn');
 
+// Function to show the current step
 function showStep(step) {
     steps.forEach((el, index) => {
         if (index === step) {
             el.classList.add('active');
+            el.style.display = 'block'; // Show current step
         } else {
             el.classList.remove('active');
+            el.style.display = 'none';  // Hide other steps
         }
     });
 }
 
+// Event listeners for "Next" buttons
 nextBtns.forEach((btn, index) => {
     btn.addEventListener('click', function () {
         currentStep = currentStep + 1;
@@ -81,6 +85,7 @@ nextBtns.forEach((btn, index) => {
     });
 });
 
+// Event listeners for "Previous" buttons
 prevBtns.forEach((btn, index) => {
     btn.addEventListener('click', function () {
         currentStep = currentStep - 1;
@@ -90,7 +95,9 @@ prevBtns.forEach((btn, index) => {
     });
 });
 
+// Initialize form with the first step visible
 showStep(currentStep);
+
 
 document.getElementById('clearSignature').addEventListener('click', function () {
     signaturePad.clear();
