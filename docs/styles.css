@@ -203,7 +203,7 @@ button {
     background-color: #007bff; /* Active line color */
 }
 
-/* Responsive adjustments for mobile */
+/* Mobile-friendly adjustments */
 @media (max-width: 480px) {
     .circle {
         width: 30px;
@@ -214,23 +214,4 @@ button {
     .line {
         height: 2px;
     }
-}
-
-
-/* Responsive adjustments for mobile */
-@media (max-width: 480px) {
-    .progress-container {
-        flex-direction: row; /* Maintain steps in a row */
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-
-    .step {
-        font-size: 14px; /* Reduce text size for smaller screens */
-    }
-
-        .step::before {
-            height: 12px; /* Adjust circle size for smaller screens */
-            width: 12px;
-        }
 }
