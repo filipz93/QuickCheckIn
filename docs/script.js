@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('id-photo');
     const addGuestBtn = document.getElementById('add-guest-btn');
     const guestsContainer = document.getElementById('guests-container');
-    let guestCount = 1; // Track the number of guests
+    let guestCount = 0; // Track the number of guests
     const guestsData = []; // Store guest data
 
     // If the user uploads a photo, show the simplified form
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Show Submit button after adding at least one guest
         if (guestCount > 1) {
             submitAllBtn.style.display = 'inline-block';
-            submitAllBtn.style.display = 'none';
+            submitOneBtn.style.display = 'none';
         }
     });
 
