@@ -6,7 +6,36 @@ document.addEventListener('DOMContentLoaded', function () {
     const noSpan = document.getElementById('no-span');
     const domesticFields = document.getElementById('domestic-fields'); // Domestic-specific fields
     const foreignFields = document.getElementById('foreign-fields'); // Foreign-specific fields
+    const nextWithUploadBtn = document.getElementById('next-with-upload');
+    const skipUploadBtn = document.getElementById('skip-upload');
+    const simplifiedForm = document.getElementById('simplified-form');
+    const fullForm = document.getElementById('full-form');
+    const fileInput = document.getElementById('id-photo');
+    const addGuestBtn = document.getElementById('add-guest-btn');
+    const guestsContainer = document.getElementById('guests-container');
 
+    // If the user uploads a photo, show the simplified form
+    nextWithUploadBtn.addEventListener('click', function () {
+        if (fileInput.files.length > 0) {
+            document.getElementById('step-1').style.display = 'none';
+            simplifiedForm.style.display = 'block';
+        } else {
+            alert('Please upload a file first.');
+        }
+    });
+
+    // If the user skips the upload, show the full form
+    skipUploadBtn.addEventListener('click', function () {
+        document.getElementById('step-1').style.display = 'none';
+        fullForm.style.display = 'block';
+    });
+
+    // Add another guest (dynamically clone form)
+    addGuestBtn.addEventListener('click', function () {
+        const newGuest = fullForm.cloneNode(true);
+        newGuest.querySelectorAll('input').forEach(input => input.value = '');
+        guestsContainer.appendChild(newGuest);
+    });
     toggleContainer.addEventListener('click', function () {
         toggleContainer.classList.toggle('active');
 
