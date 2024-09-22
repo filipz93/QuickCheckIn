@@ -100,7 +100,40 @@ input[type="file"] {
 .toggle-container.active .toggle-knob {
     transform: translateX(33px); /* Moves knob to the right */
 }
+/* File upload wrapper to style the file input */
+.file-upload-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
 
+/* Hide the native file input */
+.file-input {
+    display: none;
+}
+
+/* Style the label as a button */
+.file-upload-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    margin-right: 10px;
+}
+
+.file-upload-btn:hover {
+    background-color: #0056b3;
+}
+
+/* File name display next to the custom button */
+.file-name {
+    font-size: 14px;
+    color: #555;
+}
 /* Styling for select fields to make them consistent */
 select {
     width: 100%;

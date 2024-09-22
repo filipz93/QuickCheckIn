@@ -31,11 +31,14 @@
             <h2>Upload Photo of ID Document</h2>
     
             <!-- Brief explanation -->
-            <p>To expedite your check-in process, we recommend uploading a photo of your ID document. This will automatically fill in some of your information and make your check-in faster. Your data is securely handled.</p>
+            <p>To expedite your check-in process, we recommend uploading a photo of your ID document. This will automatically fill in some of your details and speed up the process. Your personal data will be used solely for residence registration and payment of the tourist tax, and will be securely handled.</p>
     
-            <!-- Photo upload field -->
-            <label for="id-photo" data-lang="upload-photo">Please upload a photo of your ID document *</label>
-            <input type="file" id="id-photo" name="id-photo" accept="image/*">
+            <!-- Custom styled file input -->
+            <div class="file-upload-wrapper">
+                <input type="file" id="id-photo" name="id-photo" accept="image/*" class="file-input" hidden>
+                <label for="id-photo" class="file-upload-btn">Choose File</label>
+                <span id="file-name" class="file-name">No file chosen</span>
+            </div>
 
             <p>Or</p>
 

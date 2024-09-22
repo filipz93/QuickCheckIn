@@ -33,7 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const prevBtns = document.querySelectorAll('.prev-btn');
     const circles = document.querySelectorAll('.progress-container .circle');
     const lines = document.querySelectorAll('.progress-container .line');
-
+    // Display the file name when the user selects a file
+    document.getElementById('id-photo').addEventListener('change', function () {
+        const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+        document.getElementById('file-name').textContent = fileName;
+    });
     // Function to show a specific step and update progress
     function showStep(stepIndex) {
         // Show current form step
