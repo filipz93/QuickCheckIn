@@ -32,11 +32,24 @@ document.addEventListener('DOMContentLoaded', function () {
         simplifiedForm.style.display = 'none';
     });
 
-    // Add another guest (dynamically clone form)
+    // Handle "Add Another Guest" button click
     addGuestBtn.addEventListener('click', function () {
-        const newGuest = fullForm.cloneNode(true);
-        newGuest.querySelectorAll('input').forEach(input => input.value = '');
-        guestsContainer.appendChild(newGuest);
+        const currentGuestData = getFormData(); // Get current guest form data
+        guestsData.push(currentGuestData); // Store the current guest data
+
+        guestCount++; // Increment guest count
+
+        // Reset the form for a new guest and move back to step 1
+        resetForm();
+        currentStep = 0; // Reset step to 1
+        formSteps.forEach((step, index) => {
+            step.style.display = index === 0 ? 'block' : 'none'; // Show step 1
+        });
+
+        // Show Submit button after adding at least one guest
+        if (guestCount > 1) {
+            submitAllBtn.style.display = 'inline-block';
+        }
     });
     toggleContainer.addEventListener('click', function () {
         toggleContainer.classList.toggle('active');
