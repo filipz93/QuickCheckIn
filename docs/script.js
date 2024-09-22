@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     //camera functions
     // Handle display logic for buttons based on file input and camera input
-    const fileInput = document.getElementById('id-photo');
+    //const fileInput = document.getElementById('id-photo');
     const cameraInput = document.getElementById('camera-input');
     const nextButton = document.getElementById('next-with-upload');
     const skipButton = document.getElementById('skip-upload');
