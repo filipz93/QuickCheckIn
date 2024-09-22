@@ -47,9 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Reset the form for a new guest and move back to step 1
         resetForm();
         currentStep = 0; // Reset step to 1
-        steps.forEach((step, index) => {
-            step.style.display = index === 0 ? 'block' : 'none'; // Show step 1
-        });
+        showStep(currentStep);
+        //steps.forEach((step, index) => {
+        //    step.style.display = index === 0 ? 'block' : 'none'; // Show step 1
+        //});
 
         // Show Submit button after adding at least one guest
         if (guestCount > 1) {
