@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Reset the form for a new guest and move back to step 1
         resetForm();
         currentStep = 0; // Reset step to 1
-        formSteps.forEach((step, index) => {
+        steps.forEach((step, index) => {
             step.style.display = index === 0 ? 'block' : 'none'; // Show step 1
         });
 
