@@ -94,7 +94,7 @@ p {
 }
 /* File input styling */
 input[type="file"] {
-    display: block;
+    /*display: block;*/
     margin-bottom: 10px;
 }
 .toggle-container.active .toggle-knob {
