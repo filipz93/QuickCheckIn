@@ -86,10 +86,20 @@ body {
 .toggle-container.active {
     background-color: #007bff;
 }
-
-    .toggle-container.active .toggle-knob {
-        transform: translateX(33px); /* Moves knob to the right */
-    }
+/* Explanation text */
+p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+/* File input styling */
+input[type="file"] {
+    display: block;
+    margin-bottom: 10px;
+}
+.toggle-container.active .toggle-knob {
+    transform: translateX(33px); /* Moves knob to the right */
+}
 
 /* Styling for select fields to make them consistent */
 select {

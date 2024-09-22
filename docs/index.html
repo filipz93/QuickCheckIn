@@ -28,14 +28,18 @@
         
         <!-- Step 1: Upload photo or go with form -->
         <div class="form-step active" id="step-1">
-             <h2>Upload Photo of ID Document</h2>
-            
+            <h2>Upload Photo of ID Document</h2>
+    
+            <!-- Brief explanation -->
+            <p>To expedite your check-in process, we recommend uploading a photo of your ID document. This will automatically fill in some of your information and make your check-in faster. Your data is securely handled.</p>
+    
+            <!-- Photo upload field -->
             <label for="id-photo" data-lang="upload-photo">Please upload a photo of your ID document *</label>
             <input type="file" id="id-photo" name="id-photo" accept="image/*">
-            
+
             <p>Or</p>
 
-
+            <!-- Skip and next buttons -->
             <button type="button" id="skip-upload" class="next-btn">Skip Upload</button>
             <button type="button" id="next-with-upload" class="next-btn">Next</button>
         </div>
