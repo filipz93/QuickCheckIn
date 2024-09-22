@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const noSpan = document.getElementById('no-span');
     const domesticFields = document.getElementById('domestic-fields'); // Domestic-specific fields
     const foreignFields = document.getElementById('foreign-fields'); // Foreign-specific fields
+    const foreignFieldsSimple = document.getElementById('foreign-fields-simple'); 
     const nextWithUploadBtn = document.getElementById('next-with-upload');
     const skipUploadBtn = document.getElementById('skip-upload');
     const simplifiedForm = document.getElementById('simplified-form');
@@ -87,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
             noSpan.style.display = 'none';
             domesticFields.style.display = 'block'; // Show domestic fields
             foreignFields.style.display = 'none'; // Hide foreign fields
+            foreignFieldsSimple.style.display = 'none';
         } else {
             citizenshipInput.value = 'foreign'; // No selected
             yesSpan.style.display = 'none';
