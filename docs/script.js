@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
             yesSpan.style.display = 'none';
             noSpan.style.display = 'block';
             domesticFields.style.display = 'none'; // Hide domestic fields
+            foreignFields.style.display = 'block'; // Hide foreign fields
         }
     });
 
