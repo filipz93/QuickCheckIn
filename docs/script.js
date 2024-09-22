@@ -36,7 +36,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Display the file name when the user selects a file
     document.getElementById('id-photo').addEventListener('change', function () {
         const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+        const fileInput = document.getElementById('id-photo');
+        const nextButton = document.getElementById('next-with-upload');
+        const skipButton = document.getElementById('skip-upload');
         document.getElementById('file-name').textContent = fileName;
+        if (fileInput.files.length > 0) {
+            nextButton.style.display = 'inline-block';
+            skipButton.style.display = 'none';
+        } else {
+            nextButton.style.display = 'none';
+            skipButton.style.display = 'inline-block';
+        }
     });
     // Function to show a specific step and update progress
     function showStep(stepIndex) {
