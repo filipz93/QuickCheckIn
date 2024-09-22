@@ -48,6 +48,40 @@ document.addEventListener('DOMContentLoaded', function () {
             skipButton.style.display = 'inline-block';
         }
     });
+    //camera functions
+    // Handle display logic for buttons based on file input and camera input
+    const fileInput = document.getElementById('id-photo');
+    const cameraInput = document.getElementById('camera-input');
+    const nextButton = document.getElementById('next-with-upload');
+    const skipButton = document.getElementById('skip-upload');
+
+    // On page load, show skip button by default
+    window.onload = function () {
+        nextButton.style.display = 'none';
+        skipButton.style.display = 'inline-block';
+    };
+
+    // When a file is selected from file input or camera input
+    function handleFileChange(input) {
+        if (input.files.length > 0) {
+            document.getElementById('file-name').textContent = input.files[0].name;
+            nextButton.style.display = 'inline-block';
+            skipButton.style.display = 'none';
+        } else {
+            nextButton.style.display = 'none';
+            skipButton.style.display = 'inline-block';
+        }
+    }
+
+    // Event listeners for file input and camera input
+    fileInput.addEventListener('change', function () {
+        handleFileChange(fileInput);
+    });
+
+    cameraInput.addEventListener('change', function () {
+        handleFileChange(cameraInput);
+    });
+
     // Function to show a specific step and update progress
     function showStep(stepIndex) {
         // Show current form step

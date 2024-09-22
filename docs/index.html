@@ -42,9 +42,19 @@
 
             <p>Or</p>
 
+            <!-- New button to take a photo using the camera -->
+            <div class="file-upload-wrapper">
+                <input type="file" id="camera-input" accept="image/*" capture="camera" hidden>
+                <label for="camera-input" class="file-upload-btn">Take a Photo</label>
+            </div>
+
+            
+
+            <p>Or you can skip the upload and fill the form.</p>
+
             <!-- Skip and next buttons -->
             <button type="button" id="skip-upload" class="next-btn">Skip Upload</button>
-            <button type="button" id="next-with-upload" class="next-btn" style="display:none">Next</button>
+            <button type="button" id="next-with-upload" class="next-btn" style="display:none;">Next</button>
         </div>
 
         <!-- Step 2: Citizenship Question -->
