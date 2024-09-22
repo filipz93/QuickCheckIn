@@ -28,6 +28,9 @@
         
         <!-- Step 1: Upload photo or go with form -->
         <div class="form-step active" id="step-1">
+
+            
+            <button type="button" class="next-btn" data-lang="submit">Next</button>
             
         </div>
 
@@ -46,10 +49,6 @@
             <!-- Hidden input to hold the citizenship status -->
             <input type="hidden" id="citizenship-status" name="citizenship" value="foreign">
 
-            <!-- Other form fields -->
-            <!-- <label for="email" data-lang="email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                 -->
             <label for="firstname" data-lang="firstname">First Name *</label>
             <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
 
@@ -85,8 +84,9 @@
                 <label for="residence-place" data-lang="residencePlace">Place of Residence *</label>
                 <input type="text" id="residence-place" name="residence-place" placeholder="Place of Residence" required>
             </div>
-
-            <button type="button" class="next-btn" data-lang="submit">Next</button>
+            
+            <button type="button" class="prev-btn">Previous</button>
+            <button type="button" class="next-btn">Next</button>
         </div>
 
         <!-- Step 3 -->
@@ -108,27 +108,10 @@
 
             <label for="expiry-date" data-lang="expiry-date">Expiry Date *</label>
             <input type="date" id="expiry-date" name="expiry-date" required>
-
-            <button type="button" class="prev-btn">Previous</button>
-            <button type="button" class="next-btn">Next</button>
-        </div>
-
-        <!-- Step 3 -->
-        <!--<div class="form-step" id="step-3" style="display: none;">
-            <h2>Signature and Agreement</h2>
-
-            <label for="signature" data-lang="signature">Signature *</label>
-            <div class="signature">
-                <canvas id="signatureCanvas" width="500" height="150"></canvas>
-            </div>
-            <button type="button" id="clearSignature" data-lang="clear-signature">Clear Signature</button>
-
-            <input type="checkbox" id="agree" name="agree" required>
-            <label for="agree" class="privacy-policy" data-lang="privacy-policy">I agree with the <a href="#">Terms and Conditions</a>.</label>
-
+            
             <button type="button" class="prev-btn">Previous</button>
             <button type="submit" data-lang="submit">Submit</button>
-        </div>-->
+        </div>
     </form>
 </div>
 
