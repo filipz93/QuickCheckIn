@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (fileInput.files.length > 0) {
             document.getElementById('step-1').style.display = 'none';
             simplifiedForm.style.display = 'block';
+            fullForm.style.display = 'none';
         } else {
             alert('Please upload a file first.');
         }
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     skipUploadBtn.addEventListener('click', function () {
         document.getElementById('step-1').style.display = 'none';
         fullForm.style.display = 'block';
+        simplifiedForm.style.display = 'none';
     });
 
     // Add another guest (dynamically clone form)
