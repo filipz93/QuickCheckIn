@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('id-photo');
     const addGuestBtn = document.getElementById('add-guest-btn');
     const guestsContainer = document.getElementById('guests-container');
-    let currentStep = 0;
     let guestCount = 1; // Track the number of guests
     const guestsData = []; // Store guest data
 
