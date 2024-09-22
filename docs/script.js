@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Display the file name when the user selects a file
     document.getElementById('id-photo').addEventListener('change', function () {
         const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
-        const fileInput = document.getElementById('id-photo');
+        //const fileInput = document.getElementById('id-photo');
         const nextButton = document.getElementById('next-with-upload');
         const skipButton = document.getElementById('skip-upload');
         document.getElementById('file-name').textContent = fileName;
