@@ -28,10 +28,16 @@
         
         <!-- Step 1: Upload photo or go with form -->
         <div class="form-step active" id="step-1">
+             <h2>Upload Photo of ID Document</h2>
+            
+            <label for="id-photo" data-lang="upload-photo">Please upload a photo of your ID document *</label>
+            <input type="file" id="id-photo" name="id-photo" accept="image/*">
+            
+            <p>Or</p>
 
-            
-            <button type="button" class="next-btn" data-lang="submit">Next</button>
-            
+
+            <button type="button" id="skip-upload" class="next-btn">Skip Upload</button>
+            <button type="button" id="next-with-upload" class="next-btn">Next</button>
         </div>
 
         <!-- Step 2: Citizenship Question -->
@@ -93,7 +99,7 @@
         <div class="form-step" id="step-3" style="display: none;">
             <h2>Identification document</h2>
 
-            <label for="document-type" data-lang="document-type">Nationality *</label>
+            <label for="document-type" data-lang="document-type">Document type *</label>
             <select id="document-type" name="document-type" required>
                 <option value="Passport">Passport</option>
                 <option value="personalid">Personal identification card</option>
