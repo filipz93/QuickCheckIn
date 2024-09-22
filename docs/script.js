@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggleContainer = document.getElementById('citizenship-toggle');
     const citizenshipInput = document.getElementById('citizenship-status');
     const yesSpan = document.getElementById('yes-span');
+    const submitAllBtn = document.getElementById('submit-all-btn');
+    const submitOneBtn = document.getElementById('submit-one-btn');
     const noSpan = document.getElementById('no-span');
     const domesticFields = document.getElementById('domestic-fields'); // Domestic-specific fields
     const foreignFields = document.getElementById('foreign-fields'); // Foreign-specific fields
@@ -49,7 +51,31 @@ document.addEventListener('DOMContentLoaded', function () {
         // Show Submit button after adding at least one guest
         if (guestCount > 1) {
             submitAllBtn.style.display = 'inline-block';
+            submitAllBtn.style.display = 'none';
         }
+    });
+
+    // Function to gather current guest form data
+    function getFormData() {
+        const formData = {};
+        document.querySelectorAll('input, select').forEach(input => {
+            formData[input.name] = input.value;
+        });
+        return formData;
+    }
+
+    // Reset form fields for the next guest
+    function resetForm() {
+        document.querySelectorAll('input').forEach(input => input.value = '');
+        document.querySelectorAll('select').forEach(select => select.value = '');
+    }
+
+    // Final form submission
+    submitAllBtn.addEventListener('click', function () {
+        const currentGuestData = getFormData();
+        guestsData.push(currentGuestData); // Add last guest's data
+        console.log(guestsData); // All guest data is available for submission
+        // You can now submit the `guestsData` array to your server
     });
     toggleContainer.addEventListener('click', function () {
         toggleContainer.classList.toggle('active');
