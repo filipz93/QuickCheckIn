@@ -35,20 +35,14 @@
     
             <!-- Custom styled file input -->
             <div class="file-upload-wrapper">
+                
+                <input type="file" id="camera-input" accept="image/*" capture="camera" hidden>
+                <label for="camera-input" class="file-upload-btn">Take a Photo</label>
+
                 <input type="file" id="id-photo" name="id-photo" accept="image/*" class="file-input" hidden>
                 <label for="id-photo" class="file-upload-btn">Choose File</label>
                 <span id="file-name" class="file-name">No file chosen</span>
             </div>
-
-            <p>Or</p>
-
-            <!-- New button to take a photo using the camera -->
-            <div class="file-upload-wrapper">
-                <input type="file" id="camera-input" accept="image/*" capture="camera" hidden>
-                <label for="camera-input" class="file-upload-btn">Take a Photo</label>
-            </div>
-
-            
 
             <p>Or you can skip the upload and fill the form.</p>
 
